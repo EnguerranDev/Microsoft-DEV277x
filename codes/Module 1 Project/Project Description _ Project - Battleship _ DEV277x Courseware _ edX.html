@@ -1,0 +1,2280 @@
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="ie ie9 lte9" lang="en"><![endif]-->
+<!--[if !IE]><!--><html lang="en"><!--<![endif]-->
+<head dir="ltr">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XA4GVl5ACwAEV1JQAA=="};window.NREUM||(NREUM={}),__nr_require=function(t,n,e){function r(e){if(!n[e]){var o=n[e]={exports:{}};t[e][0].call(o.exports,function(n){var o=t[e][1][n];return r(o||n)},o,o.exports)}return n[e].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<e.length;o++)r(e[o]);return r}({1:[function(t,n,e){function r(t){try{s.console&&console.log(t)}catch(n){}}var o,i=t("ee"),a=t(18),s={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(s.console=!0,o.indexOf("dev")!==-1&&(s.dev=!0),o.indexOf("nr_dev")!==-1&&(s.nrDev=!0))}catch(c){}s.nrDev&&i.on("internal-error",function(t){r(t.stack)}),s.dev&&i.on("fn-err",function(t,n,e){r(e.stack)}),s.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,n){return t}).join(", ")))},{}],2:[function(t,n,e){function r(t,n,e,r,s){try{p?p-=1:o(s||new UncaughtException(t,n,e),!0)}catch(f){try{i("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&&u.apply(this,a(arguments))}function UncaughtException(t,n,e){this.message=t||"Uncaught error with no additional information",this.sourceURL=n,this.line=e}function o(t,n){var e=n?null:c.now();i("err",[t,e])}var i=t("handle"),a=t(19),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError",p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&&(t(8),t(7),"addEventListener"in window&&t(5),c.xhrWrappable&&t(9),d=!0)}s.on("fn-start",function(t,n,e){d&&(p+=1)}),s.on("fn-err",function(t,n,e){d&&!e[l]&&(f(e,l,function(){return!0}),this.thrown=!0,o(e))}),s.on("fn-end",function(){d&&!this.thrown&&p>0&&(p-=1)}),s.on("internal-error",function(t){i("ierr",[t,c.now(),!0])})},{}],3:[function(t,n,e){t("loader").features.ins=!0},{}],4:[function(t,n,e){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),s=t(7),c="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState",g=t("loader");g.features.stn=!0,t(6);var x=NREUM.o.EV;o.on(m,function(t,n){var e=t[0];e instanceof x&&(this.bstStart=g.now())}),o.on(w,function(t,n){var e=t[0];e instanceof x&&i("bst",[e,n,this.bstStart,g.now()])}),a.on(m,function(t,n,e){this.bstStart=g.now(),this.bstType=e}),a.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),this.bstType])}),s.on(m,function(){this.bstStart=g.now()}),s.on(w,function(t,n){i(v,[n,this.bstStart,g.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=g.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+c]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+c]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+c]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,n,e){function r(t){for(var n=t;n&&!n.hasOwnProperty(u);)n=Object.getPrototypeOf(n);n&&o(n)}function o(t){s.inPlace(t,[u,d],"-",i)}function i(t,n){return t[1]}var a=t("ee").get("events"),s=t(21)(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";n.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,n){var e=t[1],r=c(e,"nr@wrapped",function(){function t(){if("function"==typeof e.handleEvent)return e.handleEvent.apply(e,arguments)}var n={object:t,"function":e}[typeof e];return n?s(n,"fn-",null,n.name||"anonymous"):e});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,n,e){var r=t("ee").get("history"),o=t(21)(r);n.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,n,e){var r=t("ee").get("raf"),o=t(21)(r),i="equestAnimationFrame";n.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,n,e){function r(t,n,e){t[0]=a(t[0],"fn-",null,e)}function o(t,n,e){this.method=e,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,e)}var i=t("ee").get("timer"),a=t(21)(i),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";n.exports=i,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(c+u,r),i.on(s+u,o)},{}],9:[function(t,n,e){function r(t,n){d.inPlace(n,["onreadystatechange"],"fn-",s)}function o(){var t=this,n=u.context(t);t.readyState>3&&!n.resolved&&(n.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function i(t){g.push(t),h&&(b?b.then(a):w?w(a):(E=-E,R.data=E))}function a(){for(var t=0;t<g.length;t++)r([],g[t]);g.length&&(g=[])}function s(t,n){return n}function c(t,n){for(var e in t)n[e]=t[e];return n}t(5);var f=t("ee"),u=f.get("xhr"),d=t(21)(u),l=NREUM.o,p=l.XHR,h=l.MO,m=l.PR,w=l.SI,v="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],g=[];n.exports=u;var x=window.XMLHttpRequest=function(t){var n=new p(t);try{u.emit("new-xhr",[n],n),n.addEventListener(v,o,!1)}catch(e){try{u.emit("internal-error",[e])}catch(r){}}return n};if(c(p,x),x.prototype=p.prototype,d.inPlace(x.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,n){r(t,n),i(n)}),u.on("open-xhr-start",r),h){var b=m&&m.resolve();if(!w&&!m){var E=1,R=document.createTextNode(E);new h(a).observe(R,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&&t[0].type===v||a()})},{}],10:[function(t,n,e){function r(){var t=window.NREUM,n=t.info.accountID||null,e=t.info.agentID||null,r=t.info.trustKey||null,i="btoa"in window&&"function"==typeof window.btoa;if(!n||!e||!i)return null;var a={v:[0,1],d:{ty:"Browser",ac:n,ap:e,id:o.generateCatId(),tr:o.generateCatId(),ti:Date.now()}};return r&&n!==r&&(a.d.tk=r),btoa(JSON.stringify(a))}var o=t(16);n.exports={generateTraceHeader:r}},{}],11:[function(t,n,e){function r(t){var n=this.params,e=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<p;r++)t.removeEventListener(l[r],this.listener,!1);n.aborted||(e.duration=s.now()-this.startTime,this.loadCaptureCalled||4!==t.readyState?null==n.status&&(n.status=0):a(this,t),e.cbTime=this.cbTime,d.emit("xhr-done",[t],t),c("xhr",[n,e,this.startTime]))}}function o(t,n){var e=t.responseType;if("json"===e&&null!==n)return n;var r="arraybuffer"===e||"blob"===e||"json"===e?t.response:t.responseText;return w(r)}function i(t,n){var e=f(n),r=t.params;r.host=e.hostname+":"+e.port,r.pathname=e.pathname,t.sameOrigin=e.sameOrigin}function a(t,n){t.params.status=n.status;var e=o(n,t.lastSize);if(e&&(t.metrics.rxSize=e),t.sameOrigin){var r=n.getResponseHeader("X-NewRelic-App-Data");r&&(t.params.cat=r.split(", ").pop())}t.loadCaptureCalled=!0}var s=t("loader");if(s.xhrWrappable){var c=t("handle"),f=t(12),u=t(10).generateTraceHeader,d=t("ee"),l=["load","error","abort","timeout"],p=l.length,h=t("id"),m=t(15),w=t(14),v=window.XMLHttpRequest;s.features.xhr=!0,t(9),d.on("new-xhr",function(t){var n=this;n.totalCbs=0,n.called=0,n.cbTime=0,n.end=r,n.ended=!1,n.xhrGuids={},n.lastSize=null,n.loadCaptureCalled=!1,t.addEventListener("load",function(e){a(n,t)},!1),m&&(m>34||m<10)||window.opera||t.addEventListener("progress",function(t){n.lastSize=t.loaded},!1)}),d.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),d.on("open-xhr-end",function(t,n){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&n.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid);var e=!1;if("init"in NREUM&&"distributed_tracing"in NREUM.init&&(e=!!NREUM.init.distributed_tracing.enabled),e&&this.sameOrigin){var r=u();r&&n.setRequestHeader("newrelic",r)}}),d.on("send-xhr-start",function(t,n){var e=this.metrics,r=t[0],o=this;if(e&&r){var i=w(r);i&&(e.txSize=i)}this.startTime=s.now(),this.listener=function(t){try{"abort"!==t.type||o.loadCaptureCalled||(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof n.onload))&&o.end(n)}catch(e){try{d.emit("internal-error",[e])}catch(r){}}};for(var a=0;a<p;a++)n.addEventListener(l[a],this.listener,!1)}),d.on("xhr-cb-time",function(t,n,e){this.cbTime+=t,n?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof e.onload||this.end(e)}),d.on("xhr-load-added",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&!this.xhrGuids[e]&&(this.xhrGuids[e]=!0,this.totalCbs+=1)}),d.on("xhr-load-removed",function(t,n){var e=""+h(t)+!!n;this.xhrGuids&&this.xhrGuids[e]&&(delete this.xhrGuids[e],this.totalCbs-=1)}),d.on("addEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-added",[t[1],t[2]],n)}),d.on("removeEventListener-end",function(t,n){n instanceof v&&"load"===t[0]&&d.emit("xhr-load-removed",[t[1],t[2]],n)}),d.on("fn-start",function(t,n,e){n instanceof v&&("onload"===e&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=s.now()))}),d.on("fn-end",function(t,n){this.xhrCbStart&&d.emit("xhr-cb-time",[s.now()-this.xhrCbStart,this.onload,n],n)})}},{}],12:[function(t,n,e){n.exports=function(t){var n=document.createElement("a"),e=window.location,r={};n.href=t,r.port=n.port;var o=n.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=n.hostname||e.hostname,r.pathname=n.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!n.protocol||":"===n.protocol||n.protocol===e.protocol,a=n.hostname===document.domain&&n.port===e.port;return r.sameOrigin=i&&(!n.hostname||a),r}},{}],13:[function(t,n,e){function r(){}function o(t,n,e){return function(){return i(t,[f.now()].concat(s(arguments)),n?null:this,e),n?void 0:this}}var i=t("handle"),a=t(18),s=t(19),c=t("ee").get("tracer"),f=t("loader"),u=NREUM;"undefined"==typeof window.newrelic&&(newrelic=u);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(d,function(t,n){u[n]=o(l+n,!0,"api")}),u.addPageAction=o(l+"addPageAction",!0),u.setCurrentRouteName=o(l+"routeName",!0),n.exports=newrelic,u.interaction=function(){return(new r).get()};var h=r.prototype={createTracer:function(t,n){var e={},r=this,o="function"==typeof n;return i(p+"tracer",[f.now(),t,e],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],e),o)try{return n.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],e),t}finally{c.emit("fn-end",[f.now()],e)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,n){h[n]=o(p+n)}),newrelic.noticeError=function(t,n){"string"==typeof t&&(t=new Error(t)),i("err",[t,f.now(),!1,n])}},{}],14:[function(t,n,e){n.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(n){return}}}},{}],15:[function(t,n,e){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),n.exports=r},{}],16:[function(t,n,e){function r(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&(n=r.getRandomValues(new Uint8Array(31)));for(var o,i="xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx",a="",s=0;s<i.length;s++)o=i[s],"x"===o?a+=t().toString(16):"y"===o?(o=3&t()|8,a+=o.toString(16)):a+=o;return a}function o(){function t(){return n?15&n[e++]:16*Math.random()|0}var n=null,e=0,r=window.crypto||window.msCrypto;r&&r.getRandomValues&&Uint8Array&&(n=r.getRandomValues(new Uint8Array(31)));for(var o=[],i=0;i<16;i++)o.push(t().toString(16));return o.join("")}n.exports={generateUuid:r,generateCatId:o}},{}],17:[function(t,n,e){function r(t,n){if(!o)return!1;if(t!==o)return!1;if(!n)return!0;if(!i)return!1;for(var e=i.split("."),r=n.split("."),a=0;a<r.length;a++)if(r[a]!==e[a])return!1;return!0}var o=null,i=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var s=navigator.userAgent,c=s.match(a);c&&s.indexOf("Chrome")===-1&&s.indexOf("Chromium")===-1&&(o="Safari",i=c[1])}n.exports={agent:o,version:i,match:r}},{}],18:[function(t,n,e){function r(t,n){var e=[],r="",i=0;for(r in t)o.call(t,r)&&(e[i]=n(r,t[r]),i+=1);return e}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],19:[function(t,n,e){function r(t,n,e){n||(n=0),"undefined"==typeof e&&(e=t?t.length:0);for(var r=-1,o=e-n||0,i=Array(o<0?0:o);++r<o;)i[r]=t[n+r];return i}n.exports=r},{}],20:[function(t,n,e){n.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],21:[function(t,n,e){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(19),a="nr@original",s=Object.prototype.hasOwnProperty,c=!1;n.exports=function(t,n){function e(t,n,e,o){function nrWrapper(){var r,a,s,c;try{a=this,r=i(arguments),s="function"==typeof e?e(r,a):e||{}}catch(f){l([f,"",[r,a,o],s])}u(n+"start",[r,a,o],s);try{return c=t.apply(a,r)}catch(d){throw u(n+"err",[r,a,d],s),d}finally{u(n+"end",[r,a,c],s)}}return r(t)?t:(n||(n=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,n,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<n.length;c++)s=n[c],a=t[s],r(a)||(t[s]=e(a,f?s+o:o,i,s))}function u(e,r,o){if(!c||n){var i=c;c=!0;try{t.emit(e,r,o,n)}catch(a){l([a,e,r,o])}c=i}}function d(t,n){if(Object.defineProperty&&Object.keys)try{var e=Object.keys(t);return e.forEach(function(e){Object.defineProperty(n,e,{get:function(){return t[e]},set:function(n){return t[e]=n,n}})}),n}catch(r){l([r])}for(var o in t)s.call(t,o)&&(n[o]=t[o]);return n}function l(n){try{t.emit("internal-error",n)}catch(e){}}return t||(t=o),e.inPlace=f,e.flag=a,e}},{}],ee:[function(t,n,e){function r(){}function o(t){function n(t){return t&&t instanceof r?t:t?c(t,s,i):i()}function e(e,r,o,i){if(!l.aborted||i){t&&t(e,r,o);for(var a=n(o),s=m(e),c=s.length,f=0;f<c;f++)s[f].apply(a,r);var d=u[g[e]];return d&&d.push([x,e,r,a]),a}}function p(t,n){y[t]=m(t).concat(n)}function h(t,n){var e=y[t];if(e)for(var r=0;r<e.length;r++)e[r]===n&&e.splice(r,1)}function m(t){return y[t]||[]}function w(t){return d[t]=d[t]||o(e)}function v(t,n){f(t,function(t,e){n=n||"feature",g[e]=n,n in u||(u[n]=[])})}var y={},g={},x={on:p,addEventListener:p,removeEventListener:h,emit:e,get:w,listeners:m,context:n,buffer:v,abort:a,aborted:!1};return x}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var s="nr@context",c=t("gos"),f=t(18),u={},d={},l=n.exports=o();l.backlog=u},{}],gos:[function(t,n,e){function r(t,n,e){if(o.call(t,n))return t[n];var r=e();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,n,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[n]=r,r}var o=Object.prototype.hasOwnProperty;n.exports=r},{}],handle:[function(t,n,e){function r(t,n,e,r){o.buffer([t],r),o.emit(t,n,e)}var o=t("ee").get("handle");n.exports=r,r.ee=o},{}],id:[function(t,n,e){function r(t){var n=typeof t;return!t||"object"!==n&&"function"!==n?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");n.exports=r},{}],loader:[function(t,n,e){function r(){if(!E++){var t=b.info=NREUM.info,n=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&n))return u.abort();f(g,function(n,e){t[n]||(t[n]=e)}),c("mark",["onload",a()+b.offset],null,"api");var e=p.createElement("script");e.src="https://"+t.agent,n.parentNode.insertBefore(e,n)}}function o(){"complete"===p.readyState&&i()}function i(){c("mark",["domContent",a()+b.offset],null,"api")}function a(){return R.exists&&performance.now?Math.round(performance.now()):(s=Math.max((new Date).getTime(),s))-b.offset}var s=(new Date).getTime(),c=t("handle"),f=t(18),u=t("ee"),d=t(17),l=window,p=l.document,h="addEventListener",m="attachEvent",w=l.XMLHttpRequest,v=w&&w.prototype;NREUM.o={ST:setTimeout,SI:l.setImmediate,CT:clearTimeout,XHR:w,REQ:l.Request,EV:l.Event,PR:l.Promise,MO:l.MutationObserver};var y=""+location,g={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1123.min.js"},x=w&&v&&v[h]&&!/CriOS/.test(navigator.userAgent),b=n.exports={offset:s,now:a,origin:y,features:{},xhrWrappable:x,userAgent:d};t(13),p[h]?(p[h]("DOMContentLoaded",i,!1),l[h]("load",r,!1)):(p[m]("onreadystatechange",o),l[m]("onload",r)),c("mark",["firstbyte",s],null,"api");var E=0,R=t(20)},{}]},{},["loader",2,11,4,3]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":1,"licenseKey":"1beac94c95","agent":"","transactionName":"NQQGYUZWDUNSVUMPWQxOIkBaVBdZXFgYBVkXExdQQ1YRVR1AXgNBEU8NW1BSGwpwWUIURQcWBUdRfg1UVk4ZAVMW","atts":"GUMRFw5MQVNcWVwPUxFPF1RdWxdYQUNoDl8GTxdcTlJBCgsOG0RFBxBKV1hYAFtsVVgTWBYSSkNdUwZfEQwGShQIFhBqXUQ8UUBPWgtTFhMNVhYNBVFfRVJKFAEOC15dUhAeW0NVFUYNFRFBXxkQWUlTFVwFUE1GVltYCFlWRRkHXBE+BVtbWRpdXENEOV8GTxdcTlJBCgcEG0RVDQ4PXFFETVVLRlIUXw8ECkFHaApDbFNZElMQERZcR1JNQ1pMUkQMV01GRlFGTVJfWVQNaQEOEVtARE1UWkVUE0URCAtbFg1SHBFOVTlDEQQWakdDAkRWGFADQj0MBVtNGQFcXFVcFWkQBBVAUUQXVVcUDVEaQBMBREFSEERsQ0QDRD0AA1BaQ0EKEXtYHF8ODQUaARlTEBthXghSDRYXFXpjQwEDGAddFjUICgMADENIBQIeRncSEQhQY1IBe1pCGFMFVU9XAxQfKHhne3tKFg4ID1AUcAZTWFkeRnUKEwtYURhUBB0GGVUBUFhKBAEAQ2NSUFYUX01UVwIaBFUSHxRUCVkJCAFGGkcRX1cbUgJOTxQXUEYaCl5VWRkVXxgERg8AAFYcEVVYCV0LBBcba2gAVldDXgIYEQgeUBYNVwMfFFQJWQkIAUYaVglDbFFFCUMSPg1RGkQKSlYUDVIaQAILQEZEBm9aUhVcFAEOEUdHUk5GAgx6D1UQDhdaUkNIdHZgBVEBGkpVYQYHUglSFBtETgA+EUZRRTxDR1dDAxgFBBBqWVYNSR1VWBNEEQRKRl1NBhIJBwJKFBoDO0BHUhFvQEJWElNMBgFBa1oCXkoYVA5XEhUBRxpVD19QXUQ5WRcVRg8FG0FDVkcZBFoNAg9qV1gWXkdFGRBTEBUNVlVbQQoBGhUVUxNPBllbVAhvUFlCCEIRTxdQRUIGXkdfVgoUWFBIF1dYDFtaU0RIRhAOABhRUxsdUEVFAEINCgFbGkQKSlYUDVACTkMHWltcClVAGGgBV0wSDU9RFVkCBBoVBVkNCg1QRxk8VlFGGRVfGARGDwYPTxJLVGgTRQcTO0ZAVhdVHVFSEmkPAApMGlUPX1BdRDlZFxVGDwUbQVNcWVwPUxFPB0ZGURdfWFNZSEULGwEXDgFXHBFVWAldCwQXG2tQClQdRV4cU0BbVgIYFQBfXF1eA0VMBABNWFgEV1ZSXggYEQgeUBYNVxwRVVgJXQsEFxtCXgdVXGlHClcbBBZqQlgPRV5TaApTFAQIG0deGVURDAVKFAEOC15dUhAebGlfFUIBTxdcTlJBCgsAG0RVDQ4PXFFETUJRQ14CGBEIHlAWDVcBHxREA0dMBQ1GRFsCSWxYVgtTQFtGZUZYCVVQQhdLFiAAEEFYUhBYWkYVShQBDgteXVIQHkNEWAIbBwUcGFhWDVdGV1ADGxITAVNRRQZeUFMZFV8YBEYPBhtBSFFpQhVTED4XQVVDBh5UU0M5WwMPHRtXXwJAR1NFSEULGwEXDgZWHBFOVTlDEQQWakdDAkRWGFADQj0MBVtNGQBfRkREAxgADQtWX0Q8X0ZCFVwHTkMHWltcClVAaUMJQgMNO0ZdTQYSCQcEUgBOQxdQRRkKQ2xCXgtTPQ0NWF1DBlQRDFEHWhEESBdXWAxbWlNESEYQDgAYUVMbHUBTRBVfDQ8NURpECkpWFA1XAVNNRk1WaBZDVkRoFUIDFQEbU1IXb15XWR8YBhQWVEBeDF4RDARIBVJYVAQFA1YJAAMHUw5UTUZNVmgWQ1ZEaBVCAxUBG1NSF29eV1kfGAEACFlHFVkBHxRdEUI9BBxFXUUGQ2xfWUQMUVdUBRgVAF9cXV4DRUw+O11HRBFTHUVeHFNAW1UZFlQMX1hfUhUYCQg7QRpECkpWFA1TAk5DF1BFGQ1FXmlCCF8WEkYPBhtBU1xZXA9TEU8IXFpCG2VAU0UIVw8ELFRHX01DWkxSRAxTTUZGUUZNU0ZERQNYFk8GWVtUCG9aUhVcFAANC1ZfGhUBCXteBUQNEgtTQBwndWUEAFFOSVAwBwQGWlEYQk4WUyIXAUdAXgBRXx1VClkBCiRWAwdWVFJUAlABUwRQAANTAQhWDwdWUAQDXAYBDlRTAxQbRFkQBkYPFnoKU0FZRAlQFkNIF0dSEh5QQ0UUUwwVSlFdRBNcUk9oCFcPBEYPFmcRX1lTVBIWJgQXVkZeE0RaWVlEGkACC1pfXgZDHVlHEl8PCB5QWE4mXldjRANEKwVKRl1NBhIJBQJKFAEOC15dUhAeQ0RYAhsHBRwYV1gMW1pTGhZZDggHTBlBClVEU1NIRQsbARcOA08SUFlYDV8HEkpUWlgNSV5ZQhVpCw8QUEZSEEQdRV4cU0BbVwcYFRBVQhhUE0QQBApBGlkWXWxfQwNbEUNeBxgVAF9cXV4DRUwADkZrQhBVQWleAhgRCB5QFg1SBB8UTwRpFxIBR2tEF1FHUxkBUxY+CVRaTk1DVkdCA1gWCAVZGlUPX1BdRDlZFxVGDwUbQUVAU0U5XwZDXgQFAFEFBwYGShQRBBUbV0IRQlZYQ0hUDg4HXmtUDEVdQkRIXhYMCBcOBk8SQFNGSEYNEg1BXVgNEgkHG0ROAD4RRlFFPENHV0MDGAUEEGpZVg1JHUVSF0MHDxBcVVtNQ1pMUkQMU1RIF1dYDFtaU0RIXQs+FhtHXhlVEQwHShQRBBUbWkIOb1pCUgtFQFtTGRZPAW9GRVIUaREVBUFRGQRVR2laB1gbTxdcTlJBCgIDG0REBxARUEdDPFpEQmgFWQ0KDVAWDUFeXEIaFFMTFAFGQFIHEh8URANHTAMIWldcPFNcQ1kSRUwJEFhYFVkCHxRFA0cXBBdBa0IQVUFpXgIUWFBVAgYCVwACGhUVUxNPBllbVAhvWlIVXBQADQtWXxoVAQl7XgVEDRILU0AcJ3VlBABRTklQMAcEBlpRGEJOFlMiEgFEQVINRFpXW01UDg4HXnQPBQIGBlMHDlBXAAIAB1ZUC1BSBVBbWAVWVQQCBVYPVkQaQBIBRBpUFkJBU1kSGAANC1ZfaABfRlhDFRgUBBZBXVQCXBEMBkoUEAQVQFFEF29SQ0MOaRYYFFAWDUFDVkVED1kMTAtHGUINW11ZQAgUHxw=","applicationID":"3343327","errorBeacon":"bam.nr-data.net","applicationTime":1180}</script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  
+<title data-base-title="
+ Project - Battleship | DEV277x Courseware | edX">
+  
+ Project Description | Project - Battleship | DEV277x Courseware | edX
+</title>
+
+
+      <script type="text/javascript">
+        /* immediately break out of an iframe if coming from the marketing website */
+        (function(window) {
+          if (window.location !== window.top.location) {
+            window.top.location = window.location;
+          }
+        })(this);
+      </script>
+
+  
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/i18n/en/djangojs.e37eef1ffc63.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/ie11_find_array.bd1c6dc7a133.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="https://prod-edxapp.edx-cdn.org/static/edx.org/images/favicon.9028de6ff678.ico" />
+
+  
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-vendor.7efc5b554ed0.css" rel="stylesheet" type="text/css" />
+
+
+
+    
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-main-v1.5a554cfa88f6.css" rel="stylesheet" type="text/css" />
+
+
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-main_vendor.a04b73033169.js" charset="utf-8"></script>
+
+
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-application.7bec85e7ca02.js" charset="utf-8"></script>
+
+
+
+  
+    
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/commons.d7a43773dc1bd9cddad4.deaded78330c.js" ></script>
+
+
+
+  <script>
+    window.baseUrl = "https://prod\u002Dedxapp.edx\u002Dcdn.org/static/";
+    (function (require) {
+      require.config({
+          baseUrl: window.baseUrl
+      });
+    }).call(this, require || RequireJS.require);
+  </script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/lms/js/require-config.38226099c6ad.js"></script>
+  
+    <script type="text/javascript">
+        (function (require) {
+          require.config({
+              paths: {
+                'js/courseware/courseware_factory': 'js/courseware/courseware_factory.1504fc10caef',
+'draggabilly': 'js/vendor/draggabilly.26caba6f7187',
+'js/courseware/toggle_element_visibility': 'js/courseware/toggle_element_visibility.d5f10bc65ed0',
+'hls': 'common/js/vendor/hls.8f15a0109b05',
+'js/courseware/link_clicked_events': 'js/courseware/link_clicked_events',
+'moment': 'common/js/vendor/moment-with-locales.084396f4103c',
+'moment-timezone': 'common/js/vendor/moment-timezone-with-data.60142e6c4416',
+'js/student_account/logistration_factory': 'js/student_account/logistration_factory.7c5277ed8d5a',
+'js/groups/views/cohorts_dashboard_factory': 'js/groups/views/cohorts_dashboard_factory.7f46663f97b4',
+'js/dateutil_factory': 'js/dateutil_factory.841c29e02056',
+'course_bookmarks/js/views/bookmark_button': 'course_bookmarks/js/views/bookmark_button.d4cfaf3361fa',
+'js/courseware/accordion_events': 'js/courseware/accordion_events.6064c7809de5',
+'js/views/message_banner': 'js/views/message_banner.bc5a1361d5f5',
+'js/groups/discussions_management/discussions_dashboard_factory': 'js/discussions_management/views/discussions_dashboard_factory.2e10d9097343',
+'js/courseware/course_info_events': 'js/courseware/course_info_events.2fc35b57627f'
+            }
+          });
+        }).call(this, require || RequireJS.require);
+    </script>
+  
+
+  
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-style-course-vendor.e7ffa8d48d4a.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-course.1069e1a0eac3.css" rel="stylesheet" type="text/css" />
+
+
+
+
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/jquery.autocomplete.3bd10d7510d2.js"></script>
+<script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/src/tooltip_manager.da362490e199.js"></script>
+
+<link href="https://prod-edxapp.edx-cdn.org/static/css/vendor/jquery.autocomplete.f95052778189.css" rel="stylesheet" type="text/css">
+  <script src='https://prod-edxapp.edx-cdn.org/static/js/discussion_vendor.f514b0e8020a.js' type='application/javascript'></script>
+<link rel='stylesheet' href='https://prod-edxapp.edx-cdn.org/static/edx.org/css/discussion/inline-discussion.b94ce1cf6b1c.css' type='text/css'>
+
+  
+
+  
+
+<script type="text/plain"
+    id="upgrade_user"
+    data-link="https://ecommerce.edx.org/basket/add/?sku=A26FFE1"
+    data-price="$99">
+</script>
+
+  
+
+
+<script type="application/json" id="user-metadata">
+    {"username": "enguerran_dallet", "enrollment_mode": "audit", "upgrade_link": "https://ecommerce.edx.org/basket/add/?sku=A26FFE1", "user_id": 11725401, "course_start": "2019-04-01T00:00:00+00:00", "course_end": "2019-07-01T00:00:00+00:00", "schedule_start": null, "upgrade_deadline": "2019-06-30T23:59:00+00:00", "course_key_fields": {"org": "Microsoft", "run": "1T2019a", "course": "DEV277x"}, "partition_groups": {"Enrollment Track Groups": [1, "Audit"], "Feature-based Enrollments": [1, "Limited-access Users"]}, "has_non_audit_enrollments": true, "pacing_type": "self_paced", "upgrade_price": "$99", "course_id": "course-v1:Microsoft+DEV277x+1T2019a", "has_staff_access": false, "forum_roles": [["Student"]], "enrollment_time": "2019-05-29T05:21:15+00:00", "audit_access_deadline": "2019-06-26T05:21:14.864340+00:00", "email": "enguerran.dallet@gmail.com", "program_key_fields": {"status": "active", "is_eligible_for_one_click_purchase": true, "uuid": "0beb9268-6047-43b5-8be4-55dcc45be396", "title": "Introduction to Programming in Java", "has_courses_left_to_purchase": true, "total_courses": 3, "courses_left_to_purchase_url": "https://ecommerce.edx.org/basket/add/?sku=8682635\u0026sku=98EF505\u0026sku=296612E\u0026bundle=0beb9268-6047-43b5-8be4-55dcc45be396", "complete_enrollment": false, "courses_left_to_purchase_price": "$297.00", "marketing_url": "https://www.edx.org/professional-certificate/microsoft-introduction-to-code-objects-and-algorithms"}}
+</script>
+
+  
+
+  
+
+<script src=//cdn.optimizely.com/js/1743970571.js></script>
+
+  
+
+
+<!-- begin Segment -->
+<script type="text/javascript">
+  // Asynchronously load Segment's analytics.js library
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="3.1.0";
+  analytics.load("8fncv13bt5");
+  analytics.page();
+  }}();
+  // Note: user tracking moved to segment-io-footer.html
+</script>
+<!-- end Segment -->
+
+
+  <meta name="path_prefix" content="">
+  
+    <meta name="google-site-verification" content="_mipQ4AtZQDNmbtOkwehQDOgCxUUV2fb_C0b6wbiRHY" />
+
+  <meta name="openedx-release-line" content="master" />
+
+
+
+
+    <script type="text/javascript">
+        (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode banner closeBanner creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode".split(" "), 0);
+        branch.init('key_live_mfvq10qtrE7sjWpz2NHVNlnfrqamuY8u');
+    </script>
+
+</head>
+
+<body class="ltr view-in-course view-courseware courseware  lang_en">
+
+
+<div id="page-prompt"></div>
+  <div class="window-wrap" dir="ltr">
+    
+    <a class="nav-skip sr-only sr-only-focusable" href="#main">Skip to main content</a>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+<header class="global-header slim">
+        
+    
+
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CookiePolicyBanner.cb566490f7d6b4ff3b1a.6598e84ff7ad.js" ></script>
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/ReactRenderer.1af35a63ed7443096d95.770058308d0f.js" ></script>
+
+    <div id="cookie-policy-banner"></div>
+    <script type="text/javascript">
+      var c;
+      try { c = CookiePolicyBanner; } catch (e) { c = null; }
+      new ReactRenderer({
+        component: c,
+        selector: '#cookie-policy-banner',
+        componentName: 'CookiePolicyBanner',
+        props: {}
+      });
+    </script>
+
+    <div class="main-header">
+        
+
+
+
+
+
+<h1 class="header-logo">
+  <a href="https://www.edx.org">
+    
+    <img  class="logo" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo.790c9a5340cb.png" alt="edX Home Page"/>
+    
+  </a>
+    <div class="course-header">
+      <span class="provider">Microsoft:</span>
+      <span class="course-number">DEV277x</span>
+      
+      <span class="course-name">Object Oriented Programming in Java</span>
+    </div>
+</h1>
+
+        <div class="hamburger-menu" role="button" aria-label=Options Menu aria-expanded="false" aria-controls="mobile-menu" tabindex="0">
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+            <span class="line"></span>
+        </div>
+            
+
+
+
+
+
+
+
+
+<div class="nav-links">
+  <div class="main">
+
+  </div>
+  <div class="secondary">
+    <div class="mobile-nav-item hidden-mobile nav-item">
+        <a class="help-link" href="https://support.edx.org" target="_blank">Help</a>
+    </div>
+    
+
+
+
+
+
+
+<div class="nav-item hidden-mobile">
+    <a href="/dashboard" class="menu-title">
+        <img class="user-image-frame" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/profiles/default_50.76570a4d025e.png" alt="">
+        <span class="sr-only">Dashboard for:</span>
+        <span class="username">enguerran_dallet</span>
+    </a>
+</div>
+<div class="nav-item hidden-mobile nav-item-dropdown" tabindex="-1">
+    <div class="toggle-user-dropdown" role="button" aria-label=Options Menu aria-expanded="false" tabindex="0" aria-controls="user-menu">
+        <span class="fa fa-caret-down" aria-hidden="true"></span>
+    </div>
+    <div class="dropdown-user-menu hidden" aria-label=More Options role="menu" id="user-menu" tabindex="-1">
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://courses.edx.org/courses/course-v1:Microsoft+DEV277x+1T2019a/jump_to/block-v1:Microsoft+DEV277x+1T2019a+type@html+block@0be980a1fce74b49b7cd7eb03ba9816e" role="menuitem">Resume your last course</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/dashboard" role="menuitem">Dashboard</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/u/enguerran_dallet" role="menuitem">Profile</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/account/settings" role="menuitem">Account</a></div>
+            <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="https://orders.edx.org/orders" role="menuitem">Order History</a></div>
+        <div class="mobile-nav-item dropdown-item dropdown-nav-item"><a href="/logout" role="menuitem">Sign Out</a></div>
+    </div>
+</div>
+
+  </div>
+</div>
+
+
+
+    </div>
+    <div class="mobile-menu hidden" aria-label=More Options role="menu" id="mobile-menu"></div>
+</header>
+
+<!--[if lte IE 9]>
+<div class="ie-banner" aria-hidden="true"><strong>Warning:</strong> Your browser is not fully supported. We strongly recommend using <a href="https://www.google.com/chrome" target="_blank">Chrome</a> or <a href="http://www.mozilla.org/firefox" target="_blank">Firefox</a>.</div>
+<![endif]-->
+
+
+
+
+        
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div class="marketing-hero"></div>
+
+    <div class="content-wrapper main-container" id="content" dir="ltr">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/template" id="image-modal-tpl">
+    <div class="wrapper-modal wrapper-modal-image">
+  <section class="image-link">
+    <%= smallHTML%>
+    <a href="#" class="modal-ui-icon action-fullscreen" role="button">
+      <span class="label">
+        <span class="icon fa fa-arrows-alt fa-large" aria-hidden="true"></span> <%- gettext("Fullscreen") %>
+      </span>
+    </a>
+  </section>
+
+  <section class="image-modal">
+    <section class="image-content">
+      <div class="image-wrapper">
+        <img alt="<%= largeALT %>, <%- gettext('Large') %>" src="<%= largeSRC %>" />
+      </div>
+
+      <a href="#" class="modal-ui-icon action-close" role="button">
+        <span class="label">
+          <span class="icon fa fa-remove fa-large" aria-hidden="true"></span> <%- gettext("Close") %>
+        </span>
+      </a>
+
+      <ul class="image-controls">
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-in" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-plus fa-large" aria-hidden="true"></span> <%- gettext("Zoom In") %>
+            </span>
+          </a>
+        </li>
+
+        <li class="image-control">
+          <a href="#" class="modal-ui-icon action-zoom-out is-disabled" aria-disabled="true" role="button">
+            <span class="label">
+              <span class="icon fa fa fa-search-minus fa-large" aria-hidden="true"></span> <%- gettext("Zoom Out") %>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
+  </section>
+</div>
+
+</script>
+
+
+
+
+
+
+
+
+<div class="message-banner" aria-live="polite"></div>
+
+  
+
+
+
+
+
+
+
+
+    
+        <nav class="courseware wrapper-course-material" aria-label="Course Material">
+            <div class="course-material">
+                
+                <ol class="tabs course-tabs">
+                    
+
+
+
+
+
+  
+  <li class="tab">
+  <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/course/" class="active">
+  Course
+      <span class="sr">, current location</span>
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/discussion/forum/" class="">
+  Discussion
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/course_wiki" class="">
+  Wiki
+  </a>
+  </li>
+  
+  <li class="tab">
+  <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/progress" class="">
+  Progress
+  </a>
+  </li>
+
+                    
+                </ol>
+            </div>
+        </nav>
+
+
+<div class="container"
+    lang="en"
+  >
+  <div class="course-wrapper" role="presentation">
+
+    <section class="course-content" id="course-content">
+        <header class="page-header has-secondary">
+            <div class="page-header-main">
+                <nav aria-label="Course" class="sr-is-focusable" tabindex="-1">
+                    <div class="has-breadcrumbs">
+                        <div class="breadcrumbs">
+                                <span class="nav-item nav-item-course">
+                                    <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/course/">Course</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-chapter" data-course-position="2" data-chapter-position="5">
+                                    <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/course/#block-v1:Microsoft+DEV277x+1T2019a+type@chapter+block@76c11a375a0e495e83ab68121566fb12">Module 1 | What is an Object</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                                <span class="nav-item nav-item-section">
+                                    <a href="/courses/course-v1:Microsoft+DEV277x+1T2019a/course/#block-v1:Microsoft+DEV277x+1T2019a+type@sequential+block@8f250da826d7405d8fecf99aca3a5e9a">Project - Battleship</a>
+                                </span>
+                                <span class="icon fa fa-angle-right" aria-hidden="true"></span>
+                            <span class="nav-item nav-item-sequence">Project Description</span>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+
+        <main id="main" tabindex="-1" aria-label="Content">
+
+              
+<div class="xblock xblock-student_view xblock-student_view-sequential xmodule_display xmodule_SequenceModule" data-graded="False" data-has-score="False" data-runtime-class="LmsRuntime" data-init="XBlockToXModuleShim" data-block-type="sequential" data-request-token="da13b46781ee11e98f290e04c611e76c" data-runtime-version="1" data-usage-id="block-v1:Microsoft+DEV277x+1T2019a+type@sequential+block@8f250da826d7405d8fecf99aca3a5e9a" data-type="Sequence" data-course-id="course-v1:Microsoft+DEV277x+1T2019a">
+  <script type="json/xblock-args" class="xblock-json-init-args">
+    {"xmodule-type": "Sequence"}
+  </script>
+  
+
+
+<div id="sequence_8f250da826d7405d8fecf99aca3a5e9a" class="sequence" data-id="block-v1:Microsoft+DEV277x+1T2019a+type@sequential+block@8f250da826d7405d8fecf99aca3a5e9a"
+     data-position="1" data-ajax-url="/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@sequential+block@8f250da826d7405d8fecf99aca3a5e9a/handler/xmodule_handler"
+     data-next-url="/courses/course-v1:Microsoft+DEV277x+1T2019a/courseware/76c11a375a0e495e83ab68121566fb12/ccf276b0dee347b78e03b6e455b08e26/?child=first" data-prev-url="/courses/course-v1:Microsoft+DEV277x+1T2019a/courseware/76c11a375a0e495e83ab68121566fb12/6ad2c6bbd76e436b9c96d7b79cc6ba54/?child=last"
+     data-save-position="true"
+     data-show-completion="true"
+>
+
+  <div class="sequence-nav">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span class="sequence-nav-button-label">Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span class="sequence-nav-button-label">Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+    <nav class="sequence-list-wrapper" aria-label="Sequence">
+      <ol id="sequence-list" role="tablist">
+        <li role="presentation">
+          <button class="seq_other inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="0"
+            data-id="block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@c705dab5671e457db8e900ffb83597c0"
+            data-element="1"
+            data-page-title="Project Description"
+            data-path="Module 1 | What is an Object &gt; Project - Battleship &gt; Project Description"
+            data-graded="False"
+            id="tab_0">
+            <span class="icon fa seq_other" aria-hidden="true"></span>
+              <span
+                class="fa fa-check-circle check-circle "
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">other&nbsp;</span>Project Description<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="seq_video inactive nav-item tab"
+            role="tab"
+            tabindex="-1"
+            aria-selected="false"
+            aria-expanded="false"
+            aria-controls="seq_content"
+            data-index="1"
+            data-id="block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@b1a84b7a993843d188c8a3a45dc81d6f"
+            data-element="2"
+            data-page-title="project Help"
+            data-path="Module 1 | What is an Object &gt; Project - Battleship &gt; project Help"
+            data-graded="False"
+            id="tab_1">
+            <span class="icon fa seq_video" aria-hidden="true"></span>
+              <span
+                class="fa fa-check-circle check-circle is-hidden"
+                style="color:green"
+                aria-hidden="true"
+              ></span>
+            <span class="fa fa-fw fa-bookmark bookmark-icon is-hidden" aria-hidden="true"></span>
+            <div class="sequence-tooltip sr"><span class="sr">video&nbsp;</span>project Help<span class="sr bookmark-icon-sr">&nbsp;</span></div>
+          </button>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <div class="sr-is-focusable" tabindex="-1"></div>
+
+  <div id="seq_contents_0"
+    aria-labelledby="tab_0"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+                &lt;div class=&#34;course-expiration-message&#34;&gt;&lt;strong&gt;Audit Access Expires &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;&lt;/strong&gt;&lt;br&gt;You lose all access to this course, including your progress, on &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;.&lt;br&gt;Upgrade by &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-30&#34; data-language=&#34;en&#34;&gt;Jun 30, 2019&lt;/span&gt; to get unlimited access to the course as long as it exists on the site. &lt;a href=&#34;https://ecommerce.edx.org/basket/add/?sku=A26FFE1&#34;&gt;Upgrade now&lt;span class=&#34;sr-only&#34;&gt; to retain access past &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@c705dab5671e457db8e900ffb83597c0&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;Project Description&lt;/h2&gt;
+
+    
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;enguerran_dallet,block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@c705dab5671e457db8e900ffb83597c0&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+    &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@html+block@440c732bac814b82983acb16e5d336fb&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@html+block@440c732bac814b82983acb16e5d336fb&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;h1 id=&#34;user-content-module-1-project---battle-ships&#34;&gt;Module 1 Project - Battle Ships&lt;/h1&gt;
+&lt;p&gt;This project will help you get more familiar with arrays. You will be recreating the game of battleships. A player will place 5 of their ships on a 10 by 10 grid. The computer player will deploy five ships on the same grid. Once the game starts the player and computer take turns, trying to sink each other&#39;s ships by guessing the coordinates to &#34;attack&#34;. The game ends when either the player or computer has no ships left.&lt;/p&gt;
+&lt;h2 id=&#34;user-content-step-1-%E2%80%93-create-the-ocean-map&#34;&gt;Step 1 &amp;ndash; Create the ocean map&lt;/h2&gt;
+&lt;p&gt;The ocean map is represented by a 10 by 10 grid of different characters. The grid is managed by a two-dimensional array. You will use this 2D array to save where the user and computer decide to place their ships, as well as when someone tries to attack a location and misses. At the start of the game the array will be empty and as the game is played you will change what is stored at each index of the array accordingly.&lt;/p&gt;
+&lt;p&gt;Once you create your 2D array you need a way to display it to the user so they can choose coordinates. You should display your array surrounded by indexes like below:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;initial screen&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/e210b75d6f2b1270d4657ab8d6358a9d/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/1-initialScreen.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;To do this you should create a method that prints out the above by looping over the array and adding the indexes and pipe characters before and after each row. You will want to use a nested for loop to print this two dimensional image.&lt;/p&gt;
+&lt;h2 id=&#34;user-content-step-2-%E2%80%93-deploy-player%E2%80%99s-ships&#34;&gt;Step 2 &amp;ndash; Deploy player&amp;rsquo;s ships&lt;/h2&gt;
+&lt;p&gt;Once you have your ocean map, you&#39;ll need to ask the user where they would like to place their ships. The player should deploy 5 ships. A ship will be stored in a single index of the array as a special character. To place the user&#39;s ships they need to tell you the coordinates of where the ship should be placed and you need to update the ocean map to reflect their choices. Remember you&#39;ll need to use a Scanner to allow the user to enter in input.&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-Java&#34;&gt;import java.util.Scanner; // you must import Scanner to use it
+
+public class BattleShipsGame {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in); //This line creates a Scanner for you to use
+
+        // ...
+
+        /* 
+        Here is some sample code where you ask the user to enter in the coordinates for where to place a ship
+        */
+        System.out.print(&#34;Enter X coordinate for your ship: &#34;);
+        int x = input.nextInt();
+        System.out.print(&#34;Enter Y coordinate for your ship: &#34;);
+        int y = input.nextInt();
+    }
+}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As the user is telling you where to place their ships you need to check if that is an appropriate location:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you can NOT place two or more ships on the same location&lt;/li&gt;
+&lt;li&gt;you can&amp;rsquo;t place ships outside the 10 by 10 grid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If the player is trying to put the ship somewhere it can&#39;t be, re-prompt them until they choose legal coordinates for the ship.&lt;/p&gt;
+&lt;p&gt;You should store the player&#39;s ships within the OceanMap as &#39;1&#39;. That way you know within your own code which indexes store the player&#39;s ships. However, when you are printing out the map from the method you created in Step 1 you should hide where the ships are by printing an &#39;@&#39; symbol instead. You can accomplish this with an extra if check within the for loop that prints your ocean map.&lt;/p&gt;
+&lt;p&gt;Once the user is finished placing a ship you should print out the map so they can see the current state of their ships.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;battle ships&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/7baeab8a0438e6f9d85b8f90fa69577c/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/2-battleShip.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Step 3 &amp;ndash; Deploy computer&amp;rsquo;s ships&lt;/p&gt;
+&lt;p&gt;The computer will deploy 5 ships by randomly picking X and Y coordinates. Your code is responsible for generating these locations, checking if they are valid, and if so placing the ships accordingly.&lt;/p&gt;
+&lt;p&gt;Keep in mind:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;you cannot place the ship on a location that is already taken by another ship (player&amp;rsquo;s or computer&amp;rsquo;s)&lt;/li&gt;
+&lt;li&gt;you can&amp;rsquo;t place ships outside the 10 by 10 grid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If the computer tries to place the ship somewhere it can&#39;t be, regenerate random coordinates until all ships are placed appropriately.&lt;/p&gt;
+&lt;p&gt;You should store the computer&#39;s ships within the OceanMap as &#39;2&#39; and they should be invisible on the ocean map. This is because the game is to have the player guess where the ships are, so you don&#39;t want to give the game away by showing the location of the computer&#39;s ships. Thus, as the ships are being deployed you want to give the user some feedback about what is happening like so:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;deployed ships&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/ec4cbb8a395cdec27dc7ba4e5d7cd5d2/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/3-shipDeployed.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;You should generate each line of output each time you successfully place a ship based on random coordinates.&lt;/p&gt;
+&lt;h2 id=&#34;user-content-step-4-%E2%80%93-battle&#34;&gt;Step 4 &amp;ndash; Battle&lt;/h2&gt;
+&lt;h3 id=&#34;user-content-player&#39;s-turn&#34;&gt;Player&#39;s Turn&lt;/h3&gt;
+&lt;p&gt;Once the player and computer have placed their ships it&#39;s time to start the battle! During the battle, the player and computer will take turns guessing X and Y coordinates of the opponent&amp;rsquo;s ships. Every coordinate guessed should be marked so they players know not to guess there again.&lt;/p&gt;
+&lt;p&gt;When the player enters X and Y coordinates you should check if those coordinates are valid within the Ocean Map and haven&#39;t been guessed by the user yet, keep re-prompting until the user enters a valid guess. Once the guess is valid your program needs to evaluate the result of the move.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;deployed ships&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/9d44066122f8a39288fa30ea86b373c4/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/4-enterCoordinates.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;There are three possible results of a valid guess:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Player correctly guessed coordinates of computer&amp;rsquo;s ship (computer loses ship).
+&lt;ul&gt;
+&lt;li&gt;You should tell the user &#34;Boom! You sunk the ship!&#34;&lt;/li&gt;
+&lt;li&gt;You should mark this as a hit when printing the map as a &#34;!&#34;. You can choose how to store this result within your own code.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Player entered coordinates of his/her own ship (player loses ship).
+&lt;ul&gt;
+&lt;li&gt;You should tell the user &#34;Oh no, you sunk your own ship :(&#34;&lt;/li&gt;
+&lt;li&gt;You should mark this as an &#34;x&#34; when printing the map, replacing the &#34;@&#34;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Player missed. No ship on the entered coordinates. &#34;Sorry, you missed&#34;
+&lt;ul&gt;
+&lt;li&gt;You should mark this as an &#34;-&#34; when printing the map.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In all of these cases you should mark the coordinates on the ocean map, so the player knows how to guess better next time.&lt;/p&gt;
+&lt;h3 id=&#34;user-content-computer&#39;s-turn&#34;&gt;Computer&#39;s Turn&lt;/h3&gt;
+&lt;p&gt;After the player guesses a coordinate it&#39;s the computer&#39;s turn to guess. The computer&#39;s attack should be two randomly generated coordinates. You will need to keep generating random numbers until you get a valid guess, meaning a location that is within the bounds of the board and the computer hasn&#39;t already guessed. Once the computer makes a valid guess, you want to print a little update to the user:&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;computer miss&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/d03acfdb22d8fe6de8e0436d7eb1410a/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/5-computerMiss.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;When the computer produces a valid guess there are three possible outcomes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Computer guessed coordinates of the player&amp;rsquo;s ship (player loses ship).
+&lt;ul&gt;
+&lt;li&gt;You should inform the user &#34;The Computer sunk one of your ships!&#34;&lt;/li&gt;
+&lt;li&gt;You should mark this as an &#34;x&#34; when printing the map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Computer guessed coordinates of its own ship (computer loses ship).
+&lt;ul&gt;
+&lt;li&gt;You should inform the user &#34;The Computer sunk one of its own ships&#34;&lt;/li&gt;
+&lt;li&gt;You should mark this as a &#34;!&#34; when printing the map&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Computer missed. No ship on guessed coordinates.
+&lt;ul&gt;
+&lt;li&gt;You should inform the user &#34;Computer missed&#34;.&lt;/li&gt;
+&lt;li&gt;You do not need to mark the map with the missed computer guesses, however you will want to decide a way to store this information in your map so the computer doesn&#39;t duplicate guesses later.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This is how the screen will look after couple turns&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;turn map&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/3641d1739f603f8e3f6ee29e09ff4fe5/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/7-coupleTurns.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The battle will continue to run until one of the players is out of ships.&lt;/p&gt;
+&lt;h2 id=&#34;user-content-step-5---game-over&#34;&gt;Step 5 - Game Over&lt;/h2&gt;
+&lt;p&gt;When the user and computer are done guessing, display the current state of the ocean map and score.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;ocean map&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/3be01c490e6cb7616a9ceb89b59ce1fe/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/6-oceanMap.png&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;The game is over when one player or computer has no ship left.&lt;/p&gt;
+&lt;p&gt;&lt;img alt=&#34;game over&#34; src=&#34;//prod-edxapp.edx-cdn.org/assets/courseware/v1/72c1c3336521c4dbd5bfadc164f7841e/asset-v1:Microsoft+DEV277x+1T2019a+type@asset+block/8-gameOver.png&#34; /&gt;&lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_contents_1"
+    aria-labelledby="tab_1"
+    aria-hidden="true"
+    class="seq_contents tex2jax_ignore asciimath2jax_ignore">
+                &lt;div class=&#34;course-expiration-message&#34;&gt;&lt;strong&gt;Audit Access Expires &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;&lt;/strong&gt;&lt;br&gt;You lose all access to this course, including your progress, on &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;.&lt;br&gt;Upgrade by &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-30&#34; data-language=&#34;en&#34;&gt;Jun 30, 2019&lt;/span&gt; to get unlimited access to the course as long as it exists on the site. &lt;a href=&#34;https://ecommerce.edx.org/basket/add/?sku=A26FFE1&#34;&gt;Upgrade now&lt;span class=&#34;sr-only&#34;&gt; to retain access past &lt;span class=&#34;localized-datetime&#34; data-format=&#34;shortDate&#34;         data-datetime=&#34;2019-06-26&#34; data-language=&#34;en&#34;&gt;Jun 26, 2019&lt;/span&gt;&lt;/span&gt;&lt;/a&gt;&lt;/div&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-vertical&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;VerticalStudentView&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@b1a84b7a993843d188c8a3a45dc81d6f&#34; data-block-type=&#34;vertical&#34;&gt;
+  
+
+  &lt;h2 class=&#34;hd hd-2 unit-title&#34;&gt;project Help&lt;/h2&gt;
+
+    
+
+
+
+&lt;div class=&#34;bookmark-button-wrapper&#34;&gt;
+  &lt;button class=&#34;btn btn-link bookmark-button &#34;
+    aria-pressed=&#34;false&#34;
+    data-bookmark-id=&#34;enguerran_dallet,block-v1:Microsoft+DEV277x+1T2019a+type@vertical+block@b1a84b7a993843d188c8a3a45dc81d6f&#34;
+    data-bookmarks-api-url=&#34;/api/bookmarks/v1/bookmarks/&#34;&gt;
+     &lt;span class=&#34;bookmark-text&#34;&gt;Bookmark this page&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/div&gt;
+
+
+&lt;div class=&#34;vert-mod&#34;&gt;
+    &lt;div class=&#34;vert vert-0&#34; data-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-video xmodule_display xmodule_VideoModule&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;video&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b&#34; data-type=&#34;Video&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;Video&#34;}
+  &lt;/script&gt;
+  
+
+
+    &lt;h3 class=&#34;hd hd-2&#34;&gt;Project Walk Through&lt;/h3&gt;
+
+&lt;div
+    id=&#34;video_0f8d4958ca2f40a0ba2efbad22f4e21b&#34;
+    class=&#34;video closed&#34;
+    data-metadata=&#39;{&amp;#34;savedVideoPosition&amp;#34;: 0.0, &amp;#34;ytMetadataUrl&amp;#34;: &amp;#34;https://www.googleapis.com/youtube/v3/videos/&amp;#34;, &amp;#34;sources&amp;#34;: [&amp;#34;https://edx-video.net/finalfiles/dev277x/object%20oriented%20programming%20in%20java/battleship-2017-08-31-76997-oop_in_java_2017%201080%20final.mp4&amp;#34;, &amp;#34;https://edx-video.net/MSXOOPJX2017-V003700_DTH.mp4&amp;#34;, &amp;#34;https://edx-video.net/MSXOOPJX2017-V003700/MSXOOPJX2017-V003700.m3u8&amp;#34;], &amp;#34;duration&amp;#34;: 80.0, &amp;#34;saveStateEnabled&amp;#34;: true, &amp;#34;speed&amp;#34;: null, &amp;#34;generalSpeed&amp;#34;: 1.75, &amp;#34;end&amp;#34;: 0.0, &amp;#34;ytTestTimeout&amp;#34;: 1500, &amp;#34;completionPercentage&amp;#34;: 0.95, &amp;#34;transcriptLanguages&amp;#34;: {&amp;#34;en&amp;#34;: &amp;#34;English&amp;#34;}, &amp;#34;start&amp;#34;: 0.0, &amp;#34;ytKey&amp;#34;: &amp;#34;AIzaSyBBwdiLp6Nm3qBVh20EgdSA6WZdCtsYkrw&amp;#34;, &amp;#34;poster&amp;#34;: &amp;#34;https://prod-images.edx-video.net/video-images/03ddc1af817b4ce9b2da439520d09209.jpeg&amp;#34;, &amp;#34;recordedYoutubeIsAvailable&amp;#34;: true, &amp;#34;publishCompletionUrl&amp;#34;: &amp;#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/publish_completion&amp;#34;, &amp;#34;ytApiUrl&amp;#34;: &amp;#34;https://www.youtube.com/iframe_api&amp;#34;, &amp;#34;prioritizeHls&amp;#34;: false, &amp;#34;autoAdvance&amp;#34;: false, &amp;#34;saveStateUrl&amp;#34;: &amp;#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/xmodule_handler/save_user_state&amp;#34;, &amp;#34;transcriptAvailableTranslationsUrl&amp;#34;: &amp;#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/transcript/available_translations&amp;#34;, &amp;#34;transcriptLanguage&amp;#34;: &amp;#34;en&amp;#34;, &amp;#34;showCaptions&amp;#34;: &amp;#34;true&amp;#34;, &amp;#34;autohideHtml5&amp;#34;: false, &amp;#34;streams&amp;#34;: &amp;#34;1.00:P5KuCLKTuGg&amp;#34;, &amp;#34;completionEnabled&amp;#34;: true, &amp;#34;transcriptTranslationUrl&amp;#34;: &amp;#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/transcript/translation/__lang__&amp;#34;, &amp;#34;captionDataDir&amp;#34;: null, &amp;#34;autoplay&amp;#34;: false}&#39;
+    data-bumper-metadata=&#39;null&#39;
+    data-autoadvance-enabled=&#34;False&#34;
+    data-poster=&#39;null&#39;
+    tabindex=&#34;-1&#34;
+&gt;
+    &lt;div class=&#34;focus_grabber first&#34;&gt;&lt;/div&gt;
+
+    &lt;div class=&#34;tc-wrapper&#34;&gt;
+      &lt;div class=&#34;video-wrapper&#34;&gt;
+          &lt;span tabindex=&#34;0&#34; class=&#34;spinner&#34; aria-hidden=&#34;false&#34; aria-label=&#34;Loading video player&#34;&gt;&lt;/span&gt;
+          &lt;span tabindex=&#34;-1&#34; class=&#34;btn-play fa fa-youtube-play fa-2x is-hidden&#34; aria-hidden=&#34;true&#34; aria-label=&#34;Play video&#34;&gt;&lt;/span&gt;
+          &lt;div class=&#34;video-player-pre&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;video-player&#34;&gt;
+              &lt;div id=&#34;0f8d4958ca2f40a0ba2efbad22f4e21b&#34;&gt;&lt;/div&gt;
+              &lt;h4 class=&#34;hd hd-4 video-error is-hidden&#34;&gt;No playable video sources found.&lt;/h4&gt;
+              &lt;h4 class=&#34;hd hd-4 video-hls-error is-hidden&#34;&gt;
+                  Your browser does not support this video format. Try using a different browser.
+              &lt;/h4&gt;
+          &lt;/div&gt;
+          &lt;div class=&#34;video-player-post&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;closed-captions&#34;&gt;&lt;/div&gt;
+          &lt;div class=&#34;video-controls is-hidden&#34;&gt;
+              &lt;div&gt;
+                  &lt;div class=&#34;vcr&#34;&gt;&lt;div class=&#34;vidtime&#34;&gt;0:00 / 0:00&lt;/div&gt;&lt;/div&gt;
+                  &lt;div class=&#34;secondary-controls&#34;&gt;&lt;/div&gt;
+              &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;focus_grabber last&#34;&gt;&lt;/div&gt;
+
+    &lt;h3 class=&#34;hd hd-4 downloads-heading sr&#34; id=&#34;video-download-transcripts_0f8d4958ca2f40a0ba2efbad22f4e21b&#34;&gt;Downloads and transcripts&lt;/h3&gt;
+    &lt;div class=&#34;wrapper-downloads&#34; role=&#34;region&#34; aria-labelledby=&#34;video-download-transcripts_0f8d4958ca2f40a0ba2efbad22f4e21b&#34;&gt;
+        &lt;div class=&#34;wrapper-download-video&#34;&gt;
+            &lt;h4 class=&#34;hd hd-5&#34;&gt;Video&lt;/h4&gt;
+            &lt;a class=&#34;btn-link video-sources video-download-button&#34; href=&#34;https://edx-video.net/MSXOOPJX2017-V003700_DTH.mp4&#34;&gt;
+                Download video file
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;wrapper-download-transcripts&#34;&gt;
+            &lt;h4 class=&#34;hd hd-5&#34;&gt;Transcripts&lt;/h4&gt;
+            &lt;ul class=&#34;list-download-transcripts&#34;&gt;
+                    &lt;li class=&#34;transcript-option&#34;&gt;
+                        
+                        &lt;a class=&#34;btn btn-link&#34; href=&#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/transcript/download&#34; data-value=&#34;srt&#34;&gt;Download SubRip (.srt) file&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&#34;transcript-option&#34;&gt;
+                        
+                        &lt;a class=&#34;btn btn-link&#34; href=&#34;/courses/course-v1:Microsoft+DEV277x+1T2019a/xblock/block-v1:Microsoft+DEV277x+1T2019a+type@video+block@0f8d4958ca2f40a0ba2efbad22f4e21b/handler/transcript/download&#34; data-value=&#34;txt&#34;&gt;Download Text (.txt) file&lt;/a&gt;
+                    &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div class=&#34;vert vert-1&#34; data-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@html+block@0be980a1fce74b49b7cd7eb03ba9816e&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-html xmodule_display xmodule_HtmlModule&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;XBlockToXModuleShim&#34; data-block-type=&#34;html&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@html+block@0be980a1fce74b49b7cd7eb03ba9816e&#34; data-type=&#34;HTMLModule&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34;&gt;
+  &lt;script type=&#34;json/xblock-args&#34; class=&#34;xblock-json-init-args&#34;&gt;
+    {&#34;xmodule-type&#34;: &#34;HTMLModule&#34;}
+  &lt;/script&gt;
+  &lt;p&gt;Feel free to use the following discussion board to answer one another&#39;s questions and to share your learnings!&lt;/p&gt;
+&lt;/div&gt;
+
+    &lt;/div&gt;
+    &lt;div class=&#34;vert vert-2&#34; data-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@discussion+block@334ebc9050f14070957b999a757a2bc0&#34;&gt;
+        
+&lt;div class=&#34;xblock xblock-student_view xblock-student_view-discussion&#34; data-graded=&#34;False&#34; data-has-score=&#34;False&#34; data-runtime-class=&#34;LmsRuntime&#34; data-init=&#34;DiscussionInlineBlock&#34; data-course-id=&#34;course-v1:Microsoft+DEV277x+1T2019a&#34; data-request-token=&#34;da13b46781ee11e98f290e04c611e76c&#34; data-runtime-version=&#34;1&#34; data-usage-id=&#34;block-v1:Microsoft+DEV277x+1T2019a+type@discussion+block@334ebc9050f14070957b999a757a2bc0&#34; data-block-type=&#34;discussion&#34;&gt;
+  
+
+
+
+
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+  window.PLATFORM_NAME = &#34;edX&#34;;
+    window.ENABLE_DISCUSSION_HOME_PANEL = true;
+&lt;/script&gt;
+
+
+
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-template&#34;&gt;
+    &lt;article class=&#34;discussion-article&#34; data-id=&#34;&lt;%- id %&gt;&#34; tabindex=&#34;-1&#34;&gt;
+    &lt;div class=&#34;thread-wrapper&#34;&gt;
+        &lt;div class=&#34;thread-main-wrapper&#34;&gt;
+            &lt;div class=&#34;thread-content-wrapper&#34;&gt;&lt;/div&gt;
+            &lt;div class=&#34;post-extended-content&#34;&gt;
+                &lt;ol class=&#34;responses js-marked-answer-list&#34;&gt;&lt;/ol&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;post-extended-content thread-responses-wrapper&#34;&gt;
+            &lt;div class=&#34;response-btn-count-wrapper&#34;&gt;
+                &lt;% if (!readOnly) { %&gt;
+                &lt;div class=&#34;add-response&#34;&gt;
+                    &lt;button class=&#34;btn btn-outline-primary btn-small add-response-btn&#34;&gt;
+                        &lt;%- gettext(&#34;Add a Response&#34;) %&gt;
+                    &lt;/button&gt;
+                &lt;/div&gt;
+                &lt;% } %&gt;
+                &lt;div class=&#34;response-count&#34;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;ol class=&#34;responses js-response-list&#34;&gt;&lt;/ol&gt;
+            &lt;div class=&#34;response-pagination&#34;&gt;&lt;/div&gt;
+            &lt;div class=&#34;post-status-closed bottom-post-status&#34; style=&#34;display: none&#34;&gt;
+              &lt;%- gettext(&#34;This thread is closed.&#34;) %&gt;
+            &lt;/div&gt;
+            &lt;% if (can_create_comment &amp;&amp; !readOnly) { %&gt;
+            &lt;form class=&#34;discussion-reply-new&#34; data-id=&#34;&lt;%- id %&gt;&#34;&gt;
+                &lt;h&lt;%- startHeader %&gt; class=&#34;add-response&#34;&gt;&lt;%- gettext(&#34;Add a response:&#34;) %&gt;&lt;/h&lt;%- startHeader %&gt; &gt;
+
+                &lt;ul class=&#34;discussion-errors&#34;&gt;&lt;/ul&gt;
+                &lt;div class=&#34;reply-body&#34; data-id=&#34;&lt;%- id %&gt;&#34;&gt;&lt;/div&gt;
+                &lt;div class=&#34;reply-post-control&#34;&gt;
+                    &lt;button class=&#34;btn btn-outline-primary discussion-submit-post control-button&#34;&gt;&lt;%- gettext(&#34;Submit&#34;) %&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+            &lt;% } %&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/article&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-show-template&#34;&gt;
+    &lt;div class=&#34;discussion-post&#34;&gt;
+    &lt;header class=&#34;post-header&#34;&gt;
+        &lt;% if (!readOnly) { %&gt;
+            &lt;div class=&#34;post-header-actions&#34;&gt;
+                &lt;%=
+                _.template(
+                    $(&#39;#forum-actions&#39;).html())(
+                    {
+                        contentId: cid,
+                        contentType: &#39;post&#39;,
+                        primaryActions: [&#39;vote&#39;, &#39;follow&#39;],
+                        secondaryActions: [&#39;pin&#39;, &#39;edit&#39;, &#39;delete&#39;, &#39;report&#39;, &#39;close&#39;],
+                        readOnly: readOnly
+                    }
+                )
+                %&gt;
+            &lt;/div&gt;
+        &lt;% } %&gt;
+        &lt;div class=&#34;post-header-content&#34;&gt;
+            &lt;h&lt;%- startHeader %&gt; class=&#34;post-title&#34;&gt;&lt;%- title %&gt;&lt;/h&lt;%- startHeader%&gt;&gt;
+            &lt;p class=&#34;posted-details&#34;&gt;
+            &lt;%
+            var timeAgoHtml = interpolate(
+                &#39;&lt;span class=&#34;timeago&#34; title=&#34;%(created_at)s&#34;&gt;%(created_at)s&lt;/span&gt;&#39;,
+                {created_at: created_at},
+                true
+            );
+            var postedTimeAgoMessage;
+            // Using a separate message to ensure proper translation for different languages
+            // thread_type describes the kind of post this is (e.g. &#34;question&#34; or &#34;discussion&#34;);
+            // time_ago is how much time has passed since the post was created (e.g. &#34;4 hours ago&#34;)
+            if (thread_type === &#39;discussion&#39;) {
+                postedTimeAgoMessage = gettext(&#39;discussion posted %(time_ago)s by %(author)s&#39;);
+            } else {
+                postedTimeAgoMessage = gettext(&#39;question posted %(time_ago)s by %(author)s&#39;);
+            }
+            %&gt;
+            &lt;%= interpolate(_.escape(postedTimeAgoMessage), {time_ago: timeAgoHtml, author: author_display}, true) %&gt;
+            &lt;/p&gt;
+            &lt;div class=&#34;post-labels&#34;&gt;
+                &lt;span class=&#34;post-label post-label-pinned&#34;&gt;
+                    &lt;span class=&#34;icon fa fa-thumb-tack&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;Pinned&#34;) %&gt;
+                &lt;/span&gt;
+                &lt;span class=&#34;post-label post-label-reported&#34;&gt;
+                    &lt;span class=&#34;icon fa fa-flag&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;Reported&#34;) %&gt;
+                &lt;/span&gt;
+                &lt;span class=&#34;post-label post-label-closed&#34;&gt;
+                    &lt;span class=&#34;icon fa fa-lock&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;Closed&#34;) %&gt;
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+
+    &lt;div class=&#34;post-body&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+    &lt;div class=&#34;post-context&#34;&gt;
+        &lt;% if (mode === &#34;tab&#34; &amp;&amp; obj.courseware_url) { %&gt;
+            &lt;%
+            var courseware_title_linked = interpolate(
+                &#39;&lt;a href=&#34;%(courseware_url)s&#34;&gt;%(courseware_title)s&lt;/a&gt;&#39;,
+                {courseware_url: courseware_url, courseware_title: _.escape(courseware_title)},
+                true
+            );
+            %&gt;
+            &lt;%=
+            interpolate(
+                _.escape(gettext(&#39;Related to: %(courseware_title_linked)s&#39;)),
+                {courseware_title_linked: courseware_title_linked},
+                true
+            )
+            %&gt;
+        &lt;% } %&gt;
+        &lt;div class=&#34;group-visibility-label&#34;&gt;
+            &lt;% if (obj.group_name &amp;&amp; is_commentable_divided) { %&gt;
+                &lt;%-
+                interpolate(
+                    gettext(&#39;This post is visible only to %(group_name)s.&#39;),
+                    {group_name: obj.group_name},
+                    true
+                )
+                %&gt;
+            &lt;% } else { %&gt;
+                &lt;%- gettext(&#39;This post is visible to everyone.&#39;) %&gt;
+            &lt;% } %&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-edit-template&#34;&gt;
+    &lt;h&lt;%- startHeader%&gt; class=&#34;thread-title&#34;&gt;&lt;%- gettext(&#34;Editing post&#34;) %&gt;&lt;/h&lt;%- startHeader%&gt;&gt;
+&lt;ul class=&#34;post-errors&#34;&gt;&lt;/ul&gt;
+&lt;div class=&#34;forum-edit-post-form-wrapper&#34;&gt;&lt;/div&gt;
+&lt;div class=&#34;post-field&#34;&gt;
+    &lt;label class=&#34;field-label&#34; for=&#39;edit-discussion-forum-title&#39;&gt;
+        &lt;span class=&#34;field-label-text&#34;&gt;&lt;%- gettext(&#34;Title&#34;) %&gt;&lt;/span&gt;
+
+        &lt;div class=&#34;field-help&#34; id=&#34;field_help_title&#34;&gt;
+            &lt;%- gettext(&#34;Add a clear and descriptive title to encourage participation. (Required)&#34;) %&gt;
+        &lt;/div&gt;
+        &lt;input id=&#39;edit-discussion-forum-title&#39; aria-describedby=&#34;field_help_title&#34; type=&#34;text&#34; class=&#34;edit-post-title field-input&#34; name=&#34;title&#34; value=&#34;&lt;%- title %&gt;&#34;&gt;
+    &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;form-row post-field&#34;&gt;
+    &lt;p class=&#34;sr-only field-help&#34; id=&#34;edit-post-editor-description&#34;&gt;&lt;%- gettext(&#39;Edit your post below.&#39;) %&gt;&lt;/p&gt;
+    &lt;div class=&#34;edit-post-body&#34; aria-describedby=&#34;edit-post-editor-description&#34; name=&#34;body&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;button type=&#34;submit&#34; id=&#34;edit-post-submit&#34; class=&#34;btn btn-primary submit post-update&#34;&gt;&lt;%- gettext(&#34;Update post&#34;) %&gt;&lt;/button&gt;
+&lt;button class=&#34;btn btn-outline-primary post-cancel&#34;&gt;&lt;%- gettext(&#34;Cancel&#34;) %&gt;&lt;/button&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-response-template&#34;&gt;
+    &lt;div class=&#34;discussion-response&#34;&gt;&lt;/div&gt;
+&lt;button class=&#34;btn-link action-show-comments&#34;&gt;
+    &lt;%
+    var fmts = ngettext(&#34;Show Comment (%(num_comments)s)&#34;, &#34;Show Comments (%(num_comments)s)&#34;, comments.length);
+    print(interpolate(fmts, {num_comments: comments.length}, true));
+    %&gt;
+    &lt;span class=&#34;icon fa fa-caret-down&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+&lt;/button&gt;
+&lt;ol class=&#34;comments&#34;&gt;
+    &lt;li class=&#34;new-comment&#34;&gt;
+        &lt;% if (create_sub_comment &amp;&amp; !readOnly) { %&gt;
+            &lt;form class=&#34;comment-form&#34; data-id=&#34;&lt;%- wmdId %&gt;&#34;&gt;
+                &lt;ul class=&#34;discussion-errors&#34;&gt;&lt;/ul&gt;
+                &lt;label class=&#34;sr&#34; for=&#34;add-new-comment-&lt;%- wmdId %&gt;&#34;&gt;&lt;%- gettext(&#34;Add a comment&#34;) %&gt;&lt;/label&gt;
+                &lt;div class=&#34;comment-body&#34; id=&#34;add-new-comment-&lt;%- wmdId %&gt;&#34; data-id=&#34;&lt;%- wmdId %&gt;&#34;
+                data-placeholder=&#34;&lt;%- gettext(&#39;Add a comment&#39;) %&gt;&#34;&gt;&lt;/div&gt;
+                &lt;div class=&#34;comment-post-control&#34;&gt;
+                    &lt;button class=&#34;btn btn-primary discussion-submit-comment control-button&#34;&gt;&lt;%- gettext(&#34;Submit&#34;) %&gt;&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/form&gt;
+        &lt;% } %&gt;
+    &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-response-show-template&#34;&gt;
+    &lt;header class=&#34;response-header&#34;&gt;
+  &lt;div class=&#34;response-header-content&#34;&gt;
+    &lt;%= author_display %&gt;
+    &lt;p class=&#34;posted-details&#34;&gt;
+        &lt;span class=&#34;timeago&#34; title=&#34;&lt;%= created_at %&gt;&#34;&gt;&lt;%= created_at %&gt;&lt;/span&gt;
+        &lt;% if (obj.endorsement &amp;&amp; obj.endorsed) { %&gt;
+            -
+            &lt;%
+            var fmt = null;
+            if (thread.get(&#34;thread_type&#34;) == &#34;question&#34;) {
+              if (endorsement.username) {
+                // Translators: time_ago is a placeholder for a fuzzy, relative timestamp
+                // like &#34;4 hours ago&#34; or &#34;about a month ago&#34;
+                fmt = gettext(&#34;marked as answer %(time_ago)s by %(user)s&#34;);
+              } else {
+                // Translators: time_ago is a placeholder for a fuzzy, relative timestamp
+                // like &#34;4 hours ago&#34; or &#34;about a month ago&#34;
+                fmt = gettext(&#34;marked as answer %(time_ago)s&#34;);
+              }
+            } else {
+              if (endorsement.username) {
+                // Translators: time_ago is a placeholder for a fuzzy, relative timestamp
+                // like &#34;4 hours ago&#34; or &#34;about a month ago&#34;
+                fmt = gettext(&#34;endorsed %(time_ago)s by %(user)s&#34;);
+              } else {
+                // Translators: time_ago is a placeholder for a fuzzy, relative timestamp
+                // like &#34;4 hours ago&#34; or &#34;about a month ago&#34;
+                fmt = gettext(&#34;endorsed %(time_ago)s&#34;);
+              }
+            }
+            var time_ago = interpolate(
+              &#39;&lt;span class=&#34;timeago&#34; title=&#34;%(time)s&#34;&gt;%(time)s&lt;/span&gt;&#39;,
+              {time: endorsement.time},
+              true
+            );
+            %&gt;
+            &lt;%= interpolate(fmt, {time_ago: time_ago, user: endorser_display}, true) %&gt;
+        &lt;% } %&gt;
+      &lt;/p&gt;
+      &lt;div class=&#34;post-labels&#34;&gt;
+          &lt;span class=&#34;post-label post-label-reported&#34;&gt;
+              &lt;span class=&#34;icon fa fa-flag&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;Reported&#34;) %&gt;
+          &lt;/span&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class=&#34;response-header-actions&#34;&gt;
+        &lt;%=
+            _.template(
+                $(&#39;#forum-actions&#39;).html())(
+                {
+                    contentId: cid,
+                    contentType: &#39;response&#39;,
+                    primaryActions: [&#39;vote&#39;, thread.get(&#39;thread_type&#39;) == &#39;question&#39; ? &#39;answer&#39; : &#39;endorse&#39;],
+                    secondaryActions: [&#39;edit&#39;, &#39;delete&#39;, &#39;report&#39;],
+                    readOnly: readOnly
+                }
+            )
+        %&gt;
+      &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;div class=&#34;response-body&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-response-edit-template&#34;&gt;
+    &lt;div class=&#34;edit-post-form&#34;&gt;
+    &lt;h&lt;%- startHeader %&gt;&gt;&lt;%- gettext(&#34;Editing response&#34;) %&gt;&lt;/h&lt;%- startHeader %&gt;&gt;
+    &lt;ul class=&#34;edit-post-form-errors&#34;&gt;&lt;/ul&gt;
+    &lt;div class=&#34;form-row&#34;&gt;
+        &lt;div class=&#34;edit-post-body&#34; name=&#34;body&#34; data-id=&#34;&lt;%- id %&gt;&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type=&#34;submit&#34; id=&#34;edit-response-submit&#34;class=&#34;btn btn-primary post-update&#34;&gt;&lt;%- gettext(&#34;Update response&#34;) %&gt;&lt;/button&gt;
+    &lt;button class=&#34;btn btn-outline-primary post-cancel&#34;&gt;&lt;%- gettext(&#34;Cancel&#34;) %&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;response-comment-show-template&#34;&gt;
+    &lt;div class=&#34;discussion-comment&#34; id=&#34;comment_&lt;%- id %&gt;&#34;&gt;
+  &lt;div class=&#34;response-body&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+  &lt;%=
+      _.template(
+          $(&#39;#forum-actions&#39;).html())(
+          {
+              contentId: cid,
+              contentType: &#39;comment&#39;,
+              primaryActions: [],
+              secondaryActions: [&#39;edit&#39;, &#39;delete&#39;, &#39;report&#39;],
+              readOnly: readOnly
+          }
+      )
+  %&gt;
+  &lt;p class=&#34;posted-details&#34;&gt;
+    &lt;%
+    var time_ago = interpolate(
+      &#39;&lt;span class=&#34;timeago&#34; title=&#34;%(time)s&#34;&gt;%(time)s&lt;/span&gt;&#39;,
+      {time: created_at},
+      true
+    );
+    %&gt;
+    &lt;%= interpolate(
+      // Translators: &#39;timeago&#39; is a placeholder for a fuzzy, relative timestamp (see: https://github.com/rmm5t/jquery-timeago)
+      gettext(&#34;posted %(time_ago)s by %(author)s&#34;),
+      {time_ago: time_ago, author: author_display},
+      true
+    ) %&gt;
+  &lt;/p&gt;
+  &lt;div class=&#34;post-labels&#34;&gt;
+    &lt;span class=&#34;post-label post-label-reported&#34;&gt;
+      &lt;span class=&#34;icon fa fa-flag&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;Reported&#34;) %&gt;
+    &lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;response-comment-edit-template&#34;&gt;
+    &lt;div class=&#34;edit-post-form&#34; id=&#34;comment_&lt;%- id %&gt;&#34;&gt;
+    &lt;h&lt;%- startHeader %&gt; &gt;&lt;%- gettext(&#34;Editing comment&#34;) %&gt;&lt;/h&lt;%- startHeader%&gt;&gt;
+    &lt;ul class=&#34;edit-comment-form-errors&#34;&gt;&lt;/ul&gt;
+    &lt;div class=&#34;form-row&#34;&gt;
+        &lt;div class=&#34;edit-comment-body&#34; name=&#34;body&#34; data-id=&#34;&lt;%- id %&gt;&#34;&gt;&lt;%- body %&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button type=&#34;submit&#34; id=&#34;edit-comment-submit&#34; class=&#34;btn btn-primary post-update&#34;&gt;&lt;%- gettext(&#34;Update comment&#34;) %&gt;&lt;/button&gt;
+    &lt;button class=&#34;btn btn-outline-primary post-cancel&#34;&gt;&lt;%- gettext(&#34;Cancel&#34;) %&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-list-item-template&#34;&gt;
+    &lt;li data-id=&#34;&lt;%- id %&gt;&#34; class=&#34;forum-nav-thread&lt;% if (!hideReadState &amp;&amp; neverRead) { %&gt; never-read&lt;% } %&gt;&#34;&gt;
+  &lt;a href=&#34;&lt;%- threadUrl %&gt;&#34; class=&#34;forum-nav-thread-link&#34;&gt;
+    &lt;div class=&#34;forum-nav-thread-wrapper-0&#34;&gt;
+      &lt;%
+      var icon_class, sr_text;
+      if (thread_type === &#34;discussion&#34;) {
+          icon_class = &#34;fa-comments&#34;;
+          // Translators: This is a label for a Discussion forum thread
+          sr_text = gettext(&#34;discussion&#34;);
+      } else if (endorsed) {
+          icon_class = &#34;fa-check-square-o&#34;;
+          // Translators: This is a label for a Question forum thread with a marked answer
+          sr_text = gettext(&#34;answered question&#34;);
+      } else {
+          icon_class = &#34;fa-question&#34;;
+          // Translators: This is a label for a Question forum thread without a marked answer
+          sr_text = gettext(&#34;unanswered question&#34;);
+      }
+      %&gt;
+      &lt;span class=&#34;sr&#34;&gt;&lt;%= sr_text %&gt;&lt;/span&gt;
+      &lt;span class=&#34;icon fa &lt;%= icon_class %&gt;&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+    &lt;/div&gt;&lt;div class=&#34;forum-nav-thread-wrapper-1&#34;&gt;
+      &lt;span class=&#34;forum-nav-thread-title&#34;&gt;&lt;%- title %&gt;&lt;/span&gt;
+      &lt;% if (showThreadPreview){ %&gt;
+        &lt;div class=&#34;thread-preview-body&#34;&gt;&lt;%- threadPreview %&gt;&lt;/div&gt;
+      &lt;% } %&gt;
+      &lt;% if(typeof(subscribed) === &#34;undefined&#34;) { var subscribed = null; } %&gt;
+      &lt;% if(pinned || subscribed || staff_authored || community_ta_authored) { %&gt;
+        &lt;ul class=&#34;forum-nav-thread-labels&#34;&gt;
+        &lt;% if (pinned) { %&gt;
+          &lt;li class=&#34;post-label post-label-pinned&#34;&gt;
+            &lt;span class=&#34;icon fa fa-thumb-tack&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+            &lt;% // Translators: This is a label for a forum thread that has been pinned %&gt;
+            &lt;%- gettext(&#34;Pinned&#34;) %&gt;
+          &lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (subscribed) { %&gt;
+          &lt;li class=&#34;post-label post-label-following&#34;&gt;
+            &lt;span class=&#34;icon fa fa-star&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+            &lt;% // Translators: This is a label for a forum thread that the user is subscribed to %&gt;
+            &lt;%- gettext(&#34;Following&#34;) %&gt;
+          &lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (staff_authored) { %&gt;
+          &lt;li class=&#34;post-label post-label-by-staff&#34;&gt;
+            &lt;span class=&#34;icon fa fa-user&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+            &lt;% // Translators: This is a label for a forum thread that was authored by a member of the course staff %&gt;
+            &lt;%- gettext(&#34;Staff&#34;) %&gt;
+          &lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (community_ta_authored) { %&gt;
+          &lt;li class=&#34;post-label post-label-by-community-ta&#34;&gt;
+            &lt;span class=&#34;icon fa fa-user&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+            &lt;% // Translators: This is a label for a forum thread that was authored by a community TA %&gt;
+            &lt;%- gettext(&#34;Community TA&#34;) %&gt;
+          &lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;/ul&gt;
+      &lt;% } %&gt;
+    &lt;/div&gt;&lt;div class=&#34;forum-nav-thread-wrapper-2&#34;&gt;
+      &lt;%
+      // Translators: &#39;votes_count&#39; is a numerical placeholder for a specific discussion thread; &#39;span_start&#39; and &#39;span_end&#39; placeholders refer to HTML markup.  Please translate the word &#39;votes&#39;.
+      var fmt = ngettext(
+           &#34;%(votes_count)s%(span_start)s vote %(span_end)s&#34;,
+           &#34;%(votes_count)s%(span_start)s votes %(span_end)s&#34;,
+           votes[&#39;up_count&#39;]
+      );
+      %&gt;
+      &lt;span class=&#34;forum-nav-thread-votes-count&#34;&gt;
+      +&lt;%= interpolate(fmt, {
+               votes_count: votes[&#39;up_count&#39;],
+               span_start: &#39;&lt;span class=&#34;sr&#34;&gt;&#39;,
+               span_end: &#39;&lt;/span&gt;&#39;
+            }, true)
+      %&gt;
+      &lt;/span&gt;
+
+      &lt;% if (!hideReadState &amp;&amp; !neverRead &amp;&amp; unread_comments_count &gt; 0) { %&gt;
+        &lt;span class=&#34;forum-nav-thread-unread-comments-count&#34;&gt;
+          &lt;%-
+            StringUtils.interpolate(
+              gettext(&#39;{unread_comments_count} new&#39;),
+              {unread_comments_count: unread_comments_count}
+            )
+          %&gt;
+        &lt;/span&gt;
+      &lt;% } %&gt;
+
+      &lt;span class=&#34;forum-nav-thread-comments-count&#34;&gt;
+      &lt;%
+      var fmt;
+      // Counts in data do not include the post itself, but the UI should
+      var data = {
+          &#39;span_sr_open&#39;: &#39;&lt;span class=&#34;sr&#34;&gt;&#39;,
+          &#39;span_close&#39;: &#39;&lt;/span&gt;&#39;,
+          &#39;unread_comments_count&#39;: unread_comments_count + (read ? 0 : 1),
+          &#39;comments_count&#39;: comments_count + 1
+      };
+      if (unread_comments_count &gt; 0) {
+          // Translators: &#39;comments_count&#39; and &#39;unread_comments_count&#39; are numerical placeholders for a specific discussion thread; &#39;span_*&#39; placeholders refer to HTML markup.  Please translate the word &#39;comments&#39;.
+          fmt = gettext(&#39;%(comments_count)s %(span_sr_open)scomments (%(unread_comments_count)s unread comments)%(span_close)s&#39;);
+      } else {
+          // Translators: &#39;comments_count&#39; is a numerical placeholder for a specific discussion thread; &#39;span_*&#39; placeholders refer to HTML markup.  Please translate the word &#39;comments&#39;.
+          fmt = gettext(&#39;%(comments_count)s %(span_sr_open)scomments %(span_close)s&#39;);
+      }
+      print(interpolate(fmt, data, true));
+      %&gt;
+      &lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;search-alert-template&#34;&gt;
+    &lt;div class=&#34;search-alert &lt;%- css_class %&gt;&#34; id=&#34;search-alert-&lt;%- cid %&gt;&#34;&gt;
+    &lt;div class=&#34;search-alert-content&#34;&gt;
+        &lt;p class=&#34;message&#34;&gt;&lt;%= HtmlUtils.ensureHtml(messageHtml) %&gt;&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;search-alert-controls&#34;&gt;
+        &lt;button class=&#34;btn-link dismiss control control-dismiss&#34; title=&#34;&lt;%- gettext(&#39;Close&#39;) %&gt;&#34;&gt;
+            &lt;span class=&#34;icon fa fa-remove&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;new-post-template&#34;&gt;
+    &lt;form class=&#34;forum-new-post-form&#34;&gt;
+    &lt;h&lt;%- startHeader %&gt; class=&#34;thread-title&#34;&gt;&lt;%- gettext(&#34;Add a Post&#34;) %&gt;&lt;/h&lt;%- startHeader %&gt;&gt;
+
+    &lt;% if (mode === &#39;inline&#39;) { %&gt;
+        &lt;button class=&#34;btn btn-outline-primary btn-default add-post-cancel&#34;&gt;
+            &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#39;Cancel&#39;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;fa fa-close&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+    &lt;% } %&gt;
+    &lt;ul class=&#34;post-errors&#34; style=&#34;display: none&#34;&gt;&lt;/ul&gt;
+    &lt;div class=&#34;forum-new-post-form-wrapper&#34;&gt;&lt;/div&gt;
+    &lt;% if (group_options) { %&gt;
+    &lt;div class=&#34;post-field group-selector-wrapper &lt;% if (!is_commentable_divided) { print(&#39;disabled&#39;); } %&gt;&#34;&gt;
+        &lt;label class=&#34;field-label&#34;&gt;
+            &lt;span class=&#34;field-label-text&#34;&gt;
+                &lt;% //Translators: This labels the selector for which group of students can view a post %&gt;
+                &lt;%- gettext(&#34;Visible to&#34;) %&gt;
+            &lt;/span&gt;
+            &lt;div class=&#34;field-help&#34; id=&#34;field_help_visible_to&#34;&gt;
+                &lt;%- gettext(&#34;Discussion admins, moderators, and TAs can make their posts visible to all students or specify a single group.&#34;) %&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;field-input&#34;&gt;
+                &lt;select aria-describedby=&#34;field_help_visible_to&#34; class=&#34;post-topic field-input js-group-select&#34; name=&#34;group_id&#34; &lt;% if (!is_commentable_divided) { print(&#34;disabled&#34;); } %&gt;&gt;
+                    &lt;option value=&#34;&#34;&gt;&lt;%- gettext(&#34;All Groups&#34;) %&gt;&lt;/option&gt;
+                    &lt;% _.each(group_options, function(opt) { %&gt;
+                    &lt;option value=&#34;&lt;%- opt.value %&gt;&#34; &lt;% if (opt.selected) { print(&#34;selected&#34;); } %&gt;&gt;&lt;%- opt.text %&gt;&lt;/option&gt;
+                    &lt;% }); %&gt;
+                &lt;/select&gt;
+            &lt;/div&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+    &lt;% } %&gt;
+    &lt;div class=&#34;post-field group-visibility&#34; id=&#34;wrapper-visibility-message&#34;&gt;&lt;/div&gt;
+    &lt;div class=&#34;post-field&#34;&gt;
+        &lt;label class=&#34;field-label&#34; for=&#39;discussion-forum-title&#39;&gt;
+            &lt;span class=&#34;field-label-text&#34;&gt;&lt;%- gettext(&#34;Title&#34;) %&gt;&lt;/span&gt;
+
+            &lt;div class=&#34;field-help&#34; id=&#34;field_help_title&#34;&gt;
+                &lt;%- gettext(&#34;Add a clear and descriptive title to encourage participation. (Required)&#34;) %&gt;
+            &lt;/div&gt;
+            &lt;div&gt;
+                &lt;input id=&#39;discussion-forum-title&#39; aria-describedby=&#34;field_help_title&#34; type=&#34;text&#34; class=&#34;js-post-title field-input&#34; name=&#34;title&#34;&gt;
+            &lt;/div&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+
+    &lt;div&gt;
+        &lt;span class=&#34;field-label-text field-label-text-full&#34; id=&#34;new-post-editor-description&#34;&gt;&lt;%- gettext(&#39;Your question or idea (required)&#39;) %&gt;&lt;/span&gt;
+        &lt;div class=&#34;js-post-body editor&#34; aria-describedby=&#34;new-post-editor-description&#34; name=&#34;body&#34;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;post-options&#34;&gt;
+        &lt;label for= &#34;follow&#34; class=&#34;field-label label-inline&#34;&gt;
+            &lt;input id=&#34;follow&#34; type=&#34;checkbox&#34; name=&#34;follow&#34; class=&#34;field-input input-checkbox&#34; checked&gt;
+            &lt;span class=&#34;field-input-label&#34;&gt;
+                &lt;span class=&#34;icon fa fa-star&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;%- gettext(&#34;follow this post&#34;) %&gt;
+            &lt;/span&gt;
+        &lt;/label&gt;
+        &lt;% if (allow_anonymous) { %&gt;
+        &lt;label for=&#34;anonymous&#34; class=&#34;field-label label-inline&#34;&gt;
+            &lt;input id=&#34;anonymous&#34; type=&#34;checkbox&#34; name=&#34;anonymous&#34; class=&#34;field-input input-checkbox&#34;&gt;
+            &lt;span class=&#34;field-input-label&#34;&gt;&lt;%- gettext(&#34;post anonymously&#34;) %&gt;&lt;/span&gt;
+        &lt;/label&gt;
+        &lt;% } %&gt;
+        &lt;% if (allow_anonymous_to_peers) { %&gt;
+        &lt;label for=&#34;anonymous_to_peers&#34; class=&#34;field-label label-inline&#34;&gt;
+            &lt;input id=&#34;anonymous_to_peers&#34; type=&#34;checkbox&#34; name=&#34;anonymous_to_peers&#34; class=&#34;field-input input-checkbox&#34;&gt;
+            &lt;span class=&#34;field-input-label&#34;&gt;&lt;%- gettext(&#34;post anonymously to classmates&#34;) %&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;% } %&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;button type=&#34;submit&#34; class=&#34;btn btn-primary submit&#34;&gt;&lt;%- gettext(&#39;Submit&#39;) %&gt;&lt;/button&gt;
+        &lt;button type=&#34;button&#34; class=&#34;btn btn-outline-primary cancel&#34;&gt;&lt;%- gettext(&#39;Cancel&#39;) %&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/form&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;new-post-menu-entry-template&#34;&gt;
+    &lt;option class=&#34;topic-title&#34; data-discussion-id=&#34;&lt;%- id %&gt;&#34; data-divided=&#34;&lt;%- is_divided %&gt;&#34;&gt;&lt;%- text %&gt;&lt;/option&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;new-post-menu-category-template&#34;&gt;
+    &lt;optgroup label=&#34;&lt;%- text %&gt;&#34;&gt;
+    &lt;%= edx.HtmlUtils.ensureHtml(entries) %&gt;
+&lt;/optgroup&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;new-post-alert-template&#34;&gt;
+    &lt;div class=&#34;alert alert-error pattern-library-shim&#34; role=&#34;alert&#34; aria-labelledby=&#34;alert-title-error-&lt;%- alertId %&gt;&#34; tabindex=&#34;-1&#34;&gt;
+    &lt;span class=&#34;icon alert-icon fa fa-warning&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+
+    &lt;div class=&#34;alert-message&#34;&gt;
+        &lt;h3 class=&#34;sr-only alert-title&#34; id=&#34;alert-title-error-&lt;%- alertId %&gt;&#34;&gt;
+            &lt;%- gettext(&#34;Error posting your message.&#34;) %&gt;
+        &lt;/h3&gt;
+
+        &lt;p class=&#34;alert-copy&#34;&gt;
+            &lt;%- gettext(message) %&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;new-post-visibility-template&#34;&gt;
+    &lt;% if (group_name) { %&gt;
+    &lt;%-
+    interpolate(
+        gettext(&#39;This post will be visible only to %(group_name)s.&#39;),
+        {group_name: group_name},
+        true
+    )
+    %&gt;
+&lt;% } else { %&gt;
+    &lt;%- gettext(&#39;This post will be visible to everyone.&#39;) %&gt;
+&lt;% } %&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;topic-template&#34;&gt;
+    &lt;div class=&#34;field-label&#34;&gt;
+    &lt;label for=&#34;topic&#34; class=&#34;field-label-text&#34;&gt;
+        &lt;%- gettext(&#34;Topic area&#34;) %&gt;
+    &lt;/label&gt;
+    &lt;div class=&#34;field-help&#34; id=&#34;field_help_topic_area&#34;&gt;
+        &lt;%- gettext(&#34;Add your post to a relevant topic to help others find it. (Required)&#34;) %&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;field-input&#34;&gt;
+    &lt;select id=&#34;topic&#34; class=&#34;post-topic field-input&#34; aria-describedby=&#34;field_help_topic_area wrapper-visibility-message&#34; required&gt;
+        &lt;%= edx.HtmlUtils.ensureHtml(topics_html) %&gt;
+    &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;post-user-display-template&#34;&gt;
+    &lt;% if (username) { %&gt;
+&lt;a href=&#34;&lt;%- user_url %&gt;&#34; class=&#34;username&#34;&gt;&lt;%- username %&gt;&lt;/a&gt;
+    &lt;% if (is_community_ta) { %&gt;
+    &lt;span class=&#34;user-label-community-ta&#34;&gt;&lt;%- gettext(&#34;(Community TA)&#34;) %&gt;&lt;/span&gt;
+    &lt;% } else if (is_staff) { %&gt;
+    &lt;span class=&#34;user-label-staff&#34;&gt;&lt;%- gettext(&#34;(Staff)&#34;) %&gt;&lt;/span&gt;
+    &lt;% } %&gt;
+&lt;% } else { %&gt;
+    &lt;%- gettext(&#39;anonymous&#39;) %&gt;
+&lt;% } %&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;inline-discussion-template&#34;&gt;
+    &lt;section class=&#34;discussion inline-discussion&#34; data-discussion-id=&#34;&lt;%- discussionId %&gt;&#34;&gt;
+    &lt;div class=&#34;add_post_btn_container &lt;%if (read_only) {%&gt;is-hidden&lt;%} %&gt;&#34;&gt;
+        &lt;button class=&#34;btn-link new-post-btn&#34;&gt;&lt;%- gettext(&#34;Add a Post&#34;) %&gt;&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;article class=&#34;new-post-article is-hidden&#34;&gt;&lt;/article&gt;
+
+    &lt;div class=&#34;inline-discussion-thread-container&#34;&gt;
+        &lt;section class=&#34;inline-threads&#34; data-discussion-id=&#34;&lt;%- discussionId %&gt;&#34;&gt;
+        &lt;/section&gt;
+
+        &lt;div class=&#34;inline-thread&#34;&gt;
+            &lt;div class=&#34;forum-nav-bar&#34;&gt;
+                &lt;button class=&#34;btn-link all-posts-btn&#34;&gt;
+                    &lt;span class=&#34;icon fa fa-chevron-prev&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+                    &lt;span aria-hidden=&#34;true&#34;&gt;&lt;%- gettext(&#39;All Posts&#39;) %&gt;&lt;/span&gt;
+                    &lt;span class=&#34;sr-only&#34;&gt;&lt;%- gettext(&#39;Return to all posts&#39;) %&gt;&lt;/span&gt;
+                &lt;/button&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;forum-content&#34;&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;pagination-template&#34;&gt;
+    &lt;nav class=&#34;discussion-paginator&#34;&gt;
+    &lt;ol&gt;
+        &lt;% if (previous) { %&gt;
+            &lt;li class=&#34;previous-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= previous.url %&gt;&#34; data-page-number=&#34;&lt;%= previous.number %&gt;&#34;&gt;&amp;lt; &lt;%- gettext(&#34;Previous&#34;) %&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (first) { %&gt;
+            &lt;li class=&#34;first-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= first.url %&gt;&#34; data-page-number=&#34;1&#34;&gt;1&lt;/a&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (leftdots) { %&gt;
+            &lt;li class=&#34;previous-ellipses&#34;&gt;&lt;%- gettext(&#34;…&#34;) %&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+
+        &lt;% _.each(lowPages, function(page) { %&gt;
+            &lt;li class=&#34;lower-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= page.url %&gt;&#34; data-page-number=&#34;&lt;%= page.number %&gt;&#34;&gt;&lt;%= page.number %&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;% }); %&gt;
+        &lt;li class=&#34;current-page&#34;&gt;&lt;span&gt;&lt;%= page %&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;% _.each(highPages, function(page) { %&gt;
+            &lt;li class=&#34;higher-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= page.url %&gt;&#34; data-page-number=&#34;&lt;%= page.number %&gt;&#34;&gt;&lt;%= page.number %&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;% }); %&gt;
+
+        &lt;% if (rightdots) { %&gt;
+            &lt;li class=&#34;next-ellipses&#34;&gt;&lt;%- gettext(&#34;…&#34;) %&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (last) { %&gt;
+            &lt;li class=&#34;last-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= last.url %&gt;&#34; data-page-number=&#34;&lt;%= last.number %&gt;&#34;&gt;&lt;%= last.number %&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+        &lt;% if (next) { %&gt;
+            &lt;li class=&#34;next-page&#34;&gt;&lt;a class=&#34;discussion-pagination&#34; href=&#34;&lt;%= next.url %&gt;&#34; data-page-number=&#34;&lt;%= next.number %&gt;&#34;&gt;&lt;%- gettext(&#34;Next&#34;) %&gt; &amp;gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;% } %&gt;
+    &lt;/ol&gt;
+&lt;/nav&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;profile-thread-template&#34;&gt;
+    &lt;article class=&#34;discussion-article&#34; data-id=&#34;&lt;%- id %&gt;&#34;&gt;
+    &lt;div class=&#34;discussion-post&#34;&gt;
+        &lt;header&gt;
+            &lt;h3&gt;&lt;%- title %&gt;&lt;/h3&gt;
+            &lt;p class=&#34;posted-details&#34;&gt;
+                &lt;% if (user) { %&gt;
+                    &lt;a href=&#34;&lt;%- user.url %&gt;&#34; class=&#34;username&#34;&gt;&lt;%- user.username %&gt;&lt;/a&gt;
+                &lt;% } else { %&gt;
+                    &lt;%- gettext(&#34;anonymous&#34;) %&gt;
+                &lt;% } %&gt;
+
+                &lt;span class=&#34;timeago&#34; title=&#34;&lt;%- created_at %&gt;&#34;&gt;&lt;%- created_at %&gt;&lt;/span&gt;
+                &lt;span class=&#34;post-status-closed top-post-status&#34; style=&#34;display: none&#34;&gt;
+                    &amp;bull; &lt;%- gettext(&#34;This thread is closed.&#34;) %&gt;
+                &lt;/span&gt;
+            &lt;/p&gt;
+        &lt;/header&gt;
+        &lt;div class=&#34;post-body&#34;&gt;&lt;%= abbreviatedBody %&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;post-tools&#34;&gt;
+        &lt;a href=&#34;&lt;%- permalink %&gt;&#34;&gt;&lt;%- gettext(&#34;View discussion&#34;) %&gt;&lt;/a&gt;
+    &lt;/div&gt;
+
+&lt;/article&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;customwmd-prompt-template&#34;&gt;
+    &lt;h4 id=&#34;editor-dialog-title&#34;&gt;&lt;%- title %&gt;&lt;/h4&gt;
+&lt;div role=&#34;status&#34; id=&#34;wmd-editor-dialog-form-errors&#34; class=&#34;sr&#34; tabindex=&#34;-1&#34;&gt;&lt;/div&gt;
+&lt;div&gt;
+    &lt;form class=&#34;form&#34;&gt;
+        &lt;fieldset class=&#34;field-group&#34;&gt;
+            &lt;legend class=&#34;form-group-hd sr&#34;&gt;&lt;%- title %&gt;&lt;/legend&gt;
+            &lt;div class=&#34;field &lt;%- uploadFieldClass %&gt;&#34;&gt;
+                &lt;label id=&#34;new-url-input-label&#34; for=&#34;new-url-input&#34; class=&#34;field-label&#34;&gt;
+                    &lt;%- urlLabel %&gt;&lt;/label&gt;
+                &lt;input type=&#34;text&#34; id=&#34;new-url-input&#34; class=&#34;field-input input-text&#34; aria-describedby=&#34;new-url-input-help&#34;&gt;
+                &lt;% if (imageUploadHandler) { %&gt;
+                    &lt;button id=&#34;file-upload-proxy&#34; class=&#34;btn btn-primary btn-base form-btn&#34;&gt;
+                        &lt;%- chooseFileText %&gt;
+                    &lt;/button&gt;
+                    &lt;input type=&#34;file&#34; name=&#34;file-upload&#34; id=&#34;file-upload&#34; style=&#34;display:none;&#34;/&gt;
+                &lt;% } %&gt;
+                &lt;div id=&#34;new-url-input-field-message&#34; class=&#34;field-message has-error&#34; style=&#34;display:none&#34;&gt;
+                    &lt;span class=&#34;field-message-content&#34;&gt;&lt;%- urlError %&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id=&#34;new-url-input-help&#34; class=&#34;field-hint&#34;&gt;
+                    &lt;%- urlHelp %&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;field&#34;&gt;
+                &lt;label for=&#34;new-url-desc-input&#34; class=&#34;field-label&#34;&gt;&lt;%- urlDescLabel %&gt;&lt;/label&gt;
+                &lt;input type=&#34;text&#34; id=&#34;new-url-desc-input&#34; class=&#34;field-input input-text&#34; required aria-describedby=&#34;new-url-desc-input-help&#34;&gt;
+                &lt;div id=&#34;new-url-desc-input-field-message&#34; class=&#34;field-message has-error&#34; style=&#34;display:none&#34;&gt;
+                    &lt;span class=&#34;field-message-content&#34;&gt;&lt;%- descError %&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div id=&#34;new-url-desc-input-help&#34; class=&#34;field-hint&#34;&gt;
+                    &lt;%- urlDescHelp %&gt;
+                    &lt;% if (urlDescHelpLink) { %&gt;
+                        &lt;a href=&#34;&lt;%- urlDescHelpLink[&#39;href&#39;] %&gt;&#34;&gt;
+                            &lt;%- urlDescHelpLink[&#39;text&#39;] %&gt;
+                        &lt;/a&gt;
+                    &lt;% } %&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;field&#34;&gt;&lt;% if (imageUploadHandler) { %&gt;
+                &lt;label for=&#34;img-is-decorative&#34; class=&#34;field-label label-inline&#34;&gt;
+                    &lt;input type=&#34;checkbox&#34; id=&#34;img-is-decorative&#34; class=&#34;field-input input-checkbox&#34;&gt;
+                    &lt;span class=&#34;field-input-label&#34;&gt;&lt;%- imageIsDecorativeLabel %&gt;&lt;/span&gt;
+                &lt;/label&gt; &lt;% }
+            %&gt;&lt;/div&gt;
+        &lt;/fieldset&gt;
+        &lt;div class=&#34;form-actions&#34;&gt;
+            &lt;input type=&#34;button&#34; id=&#34;new-link-image-ok&#34; class=&#34;btn btn-primary form-btn&#34; value=&#34;&lt;%- okText %&gt;&#34; /&gt;
+            &lt;input type=&#34;button&#34; id=&#34;new-link-image-cancel&#34; class=&#34;btn btn-outline-primary form-btn&#34; value=&#34;&lt;%- cancelText %&gt;&#34; &gt;
+        &lt;/div&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;nav-loading-template&#34;&gt;
+    &lt;div class=&#34;forum-nav-loading&#34; tabindex=&#34;0&#34;&gt;
+    &lt;span class=&#34;icon fa fa-spinner fa-spin&#34;/&gt;
+    &lt;span class=&#34;sr&#34; role=&#34;alert&#34;&gt;&lt;%- srText %&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;thread-type-template&#34;&gt;
+    &lt;div class=&#34;post-field&#34;&gt;
+&lt;fieldset&gt;
+    &lt;legend class=&#34;field-label&#34;&gt;
+        &lt;span class=&#34;field-label-text&#34;&gt;
+            &lt;% // Translators: This is the label for a control to select a forum post type %&gt;
+            &lt;%- gettext(&#34;Post type&#34;) %&gt;
+        &lt;/span&gt;
+    &lt;/legend&gt;
+    &lt;div class=&#34;field-help&#34; id=&#34;field_help_post_type&#34;&gt;
+        &lt;%- gettext(&#34;Questions raise issues that need answers. Discussions share ideas and start conversations. (Required)&#34;) %&gt;
+    &lt;/div&gt;
+    &lt;div class=&#34;field-label&#34;&gt;
+        &lt;label for=&#34;&lt;%= form_id %&gt;-post-type-question&#34; class=&#34;post-type-label&#34;&gt;
+            &lt;input aria-describedby=&#34;field_help_post_type&#34; type=&#34;radio&#34; name=&#34;&lt;%= form_id %&gt;-post-type&#34; class=&#34;field-input input-radio&#34; id=&#34;&lt;%= form_id %&gt;-post-type-question&#34; value=&#34;question&#34;&gt;
+            &lt;span class=&#34;field-input-label&#34;&gt;
+                &lt;span class=&#34;icon fa fa-question&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+                &lt;% // Translators: This is a forum post type %&gt;
+                &lt;%- gettext(&#34;Question&#34;) %&gt;
+            &lt;/span&gt;
+        &lt;/label&gt;
+        &lt;label for=&#34;&lt;%= form_id %&gt;-post-type-discussion&#34; class=&#34;post-type-label&#34;&gt;
+            &lt;input aria-describedby=&#34;field_help_post_type&#34; type=&#34;radio&#34; name=&#34;&lt;%= form_id %&gt;-post-type&#34; class=&#34;field-input input-radio&#34; id=&#34;&lt;%= form_id %&gt;-post-type-discussion&#34; value=&#34;discussion&#34; checked&gt;
+            &lt;span class=&#34;field-input-label&#34;&gt;
+                &lt;span class=&#34;icon fa fa-comments&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+                &lt;% // Translators: This is a forum post type %&gt;
+                &lt;%- gettext(&#34;Discussion&#34;) %&gt;
+            &lt;/span&gt;
+        &lt;/label&gt;
+    &lt;/div&gt;
+&lt;/fieldset&gt;
+
+&lt;/script&gt;
+
+
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-endorse&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-button action-endorse&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Endorse&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Endorse&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Unendorse&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-check&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-answer&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-button action-answer&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Mark as Answer&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Mark as Answer&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Unmark as Answer&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-check&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-follow&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-button action-follow&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Follow&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Follow&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Unfollow&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-star&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-vote&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;span aria-hidden=&#34;true&#34; class=&#34;display-vote is-hidden&#34; &gt;
+      &lt;span class=&#34;vote-count&#34;&gt;&lt;/span&gt;
+    &lt;/span&gt;
+    &lt;button class=&#34;btn-link action-button action-vote&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;% // Vote counts are populated by JS %&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Vote for this post,&#34;) %&gt;&amp;nbsp;&lt;/span&gt;
+        &lt;span class=&#34;sr js-sr-vote-count&#34;&gt;&lt;/span&gt;
+
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+          &lt;span class=&#34;vote-count&#34;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+
+        &lt;span class=&#34;action-icon&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;icon fa fa-plus&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-report&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-list-item action-report&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Report abuse&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Report&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Unreport&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;
+          &lt;span class=&#34;icon fa fa-flag&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-pin&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-list-item action-pin&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Pin&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Pin&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Unpin&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;
+          &lt;span class=&#34;icon fa fa-thumb-tack&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-close&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-list-item action-close&#34; role=&#34;checkbox&#34; aria-checked=&#34;false&#34;&gt;
+        &lt;span class=&#34;sr&#34;&gt;&lt;%- gettext(&#34;Close&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-label&#34; aria-hidden=&#34;true&#34;&gt;
+            &lt;span class=&#34;label-unchecked&#34;&gt;&lt;%- gettext(&#34;Close&#34;) %&gt;&lt;/span&gt;
+            &lt;span class=&#34;label-checked&#34;&gt;&lt;%- gettext(&#34;Open&#34;) %&gt;&lt;/span&gt;
+        &lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;
+          &lt;span class=&#34;icon fa fa-lock&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;
+        &lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-edit&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-list-item action-edit&#34;&gt;
+        &lt;span class=&#34;action-label&#34;&gt;&lt;%- gettext(&#34;Edit&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-pencil&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-action-delete&#34;&gt;
+    &lt;li class=&#34;actions-item&#34;&gt;
+    &lt;button class=&#34;btn-link action-list-item action-delete&#34;&gt;
+        &lt;span class=&#34;action-label&#34;&gt;&lt;%- gettext(&#34;Delete&#34;) %&gt;&lt;/span&gt;
+        &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-remove&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;forum-actions&#34;&gt;
+    &lt;% if (!readOnly) { %&gt;
+    &lt;ul class=&#34;&lt;%- contentType %&gt;-actions-list&#34;&gt;
+        &lt;% _.each(primaryActions, function(action) { print(_.template($(&#39;#forum-action-&#39; + action).html())({})) }) %&gt;
+        &lt;li class=&#34;actions-item is-visible&#34;&gt;
+            &lt;div class=&#34;more-wrapper&#34;&gt;
+                &lt;button class=&#34;btn-link action-button action-more&#34; aria-label=&#34;&lt;%- gettext(&#39;More&#39;) %&gt;&#34; aria-haspopup=&#34;true&#34; aria-controls=&#34;action-menu-&lt;%- contentType %&gt;-&lt;%- contentId %&gt;&#34;&gt;
+                    &lt;span class=&#34;action-label&#34;&gt;&lt;%- gettext(&#39;More&#39;) %&gt;&lt;/span&gt;
+                    &lt;span class=&#34;action-icon&#34;&gt;&lt;span class=&#34;icon fa fa-ellipsis-h&#34; aria-hidden=&#34;true&#34;&gt;&lt;/span&gt;&lt;/span&gt;
+                &lt;/button&gt;
+                &lt;div class=&#34;actions-dropdown&#34; id=&#34;action-menu-&lt;%- contentType %&gt;-&lt;%- contentId %&gt;&#34; aria-expanded=&#34;false&#34;&gt;
+                  &lt;ul class=&#34;actions-dropdown-list&#34;&gt;
+                    &lt;% _.each(secondaryActions, function(action) { print(_.template($(&#39;#forum-action-&#39; + action).html())({})) }) %&gt;
+                  &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;% } %&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;alert-popup&#34;&gt;
+    &lt;div class=&#39;modal&#39; role=&#39;alertdialog&#39; id=&#39;discussion-alert&#39; aria-describedby=&#39;discussion-alert-message&#39;&gt;
+    &lt;div class=&#39;inner-wrapper discussion-alert-wrapper&#39;&gt;
+        &lt;button class=&#39;btn close-modal dismiss&#39; title=&#39;&lt;%- gettext(&#34;Close&#34;) %&gt;&#39;&#39;&gt;
+            &lt;span class=&#39;icon fa fa-times&#39; aria-hidden=&#39;true&#39;&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;header&gt;
+            &lt;h2/&gt;&lt;/h2&gt;
+            &lt;hr/&gt;
+        &lt;/header&gt;
+        &lt;p id=&#39;discussion-alert-message&#39;&gt;&lt;/p&gt;
+        &lt;hr/&gt;
+        &lt;button class=&#39;btn dismiss&#39;&gt;&lt;%- gettext(&#34;OK&#34;) %&gt;&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/script&gt;
+&lt;script aria-hidden=&#34;true&#34; type=&#34;text/template&#34; id=&#34;nav-load-more-link&#34;&gt;
+    &lt;li class=&#39;forum-nav-load-more&#39;&gt;
+    &lt;button class=&#39;btn-link forum-nav-load-more-link&#39;&gt;
+        &lt;%- gettext(&#34;Load more&#34;) %&gt;
+    &lt;/button&gt;
+&lt;/li&gt;
+
+&lt;/script&gt;
+
+
+
+&lt;script type=&#34;text/template&#34; id=&#34;thread-list-template&#34;&gt;
+    &lt;div class=&#34;forum-nav-thread-list-wrapper&#34; id=&#34;sort-filter-wrapper&#34; tabindex=&#34;-1&#34;&gt;
+        &lt;div class=&#34;forum-nav-refine-bar&#34;&gt;
+            &lt;label class=&#34;forum-nav-filter-main&#34;&gt;
+                &lt;span class=&#34;sr&#34;&gt;Filter:&lt;/span&gt;
+                &lt;select class=&#34;forum-nav-filter-main-control&#34;&gt;
+                    &lt;option value=&#34;all&#34;&gt;Show all posts&lt;/option&gt;
+                    &lt;option value=&#34;unread&#34;&gt;Unread posts&lt;/option&gt;
+                    &lt;option value=&#34;unanswered&#34;&gt;Unanswered posts&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/label&gt;&lt;% if (isDiscussionDivisionEnabled &amp;&amp; isPrivilegedUser) { %&gt;&lt;label class=&#34;forum-nav-filter-cohort&#34;&gt;
+                &lt;span class=&#34;sr&#34;&gt;Group:&lt;/span&gt;
+                &lt;select class=&#34;forum-nav-filter-cohort-control&#34;&gt;
+                    &lt;option value=&#34;&#34;&gt;in all groups&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/label&gt;&lt;% } %&gt;&lt;label class=&#34;forum-nav-sort&#34;&gt;
+                &lt;span class=&#34;sr&#34;&gt;Sort:&lt;/span&gt;
+                &lt;select class=&#34;forum-nav-sort-control&#34;&gt;
+                    &lt;option value=&#34;activity&#34;&gt;by recent activity&lt;/option&gt;
+                    &lt;option value=&#34;comments&#34;&gt;by most activity&lt;/option&gt;
+                    &lt;option value=&#34;votes&#34;&gt;by most votes&lt;/option&gt;
+                &lt;/select&gt;
+            &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;search-alerts&#34;&gt;&lt;/div&gt;
+        &lt;ul class=&#34;forum-nav-thread-list&#34;&gt;&lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/script&gt;
+
+
+
+
+&lt;div class=&#34;discussion-module&#34; data-discussion-id=&#34;a7ee100a54a87db4d05ed7b7972c67977aab78ad&#34;
+    data-user-create-comment=&#34;true&#34;
+    data-user-create-subcomment=&#34;true&#34;
+    data-read-only=&#34;false&#34;&gt;
+    &lt;div class=&#34;discussion-module-header&#34;&gt;
+        &lt;h3 class=&#34;hd hd-3 discussion-module-title&#34;&gt;Project Battleship&lt;/h3&gt;
+        &lt;div class=&#34;inline-discussion-topic&#34;&gt;&lt;span class=&#34;inline-discussion-topic-title&#34;&gt;Topic:&lt;/span&gt; Module 1
+                    / Project Battleship
+           &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class=&#34;discussion-show btn&#34;
+        data-discussion-id=&#34;a7ee100a54a87db4d05ed7b7972c67977aab78ad&#34;
+        &gt;
+        &lt;span class=&#34;button-text&#34;&gt;Show Discussion&lt;/span&gt;
+    &lt;/button&gt;
+
+&lt;/div&gt;
+&lt;script type=&#34;text/javascript&#34;&gt;
+var $$course_id = &#34;course\u002Dv1:Microsoft+DEV277x+1T2019a&#34;;
+
+function DiscussionInlineBlock(runtime, element) {
+    &#39;use strict&#39;;
+    var el = $(element).find(&#39;.discussion-module&#39;);
+    new DiscussionInlineView({ el: el, readOnly: el.data(&#39;read-only&#39;) });
+}
+&lt;/script&gt;
+
+&lt;/div&gt;
+
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+  </div>
+  <div id="seq_content" role="tabpanel"></div>
+
+  <nav class="sequence-bottom" aria-label="Section">
+    <button class="sequence-nav-button button-previous">
+      <span class="icon fa fa-chevron-prev" aria-hidden="true"></span>
+      <span>Previous</span>
+    </button>
+    <button class="sequence-nav-button button-next">
+      <span>Next</span>
+      <span class="icon fa fa-chevron-next" aria-hidden="true"></span>
+    </button>
+  </nav>
+</div>
+
+</div>
+
+        </main>
+    </section>
+
+    <section class="courseware-results-wrapper">
+      <div id="loading-message" aria-live="polite" aria-relevant="all"></div>
+      <div id="error-message" aria-live="polite"></div>
+      <div class="courseware-results search-results" data-course-id="course-v1:Microsoft+DEV277x+1T2019a" data-lang-code="en"></div>
+    </section>
+
+  </div>
+  
+
+
+
+
+
+
+    <div class="verification-sock"
+    >
+        <button type="button" aria-expanded="false" class="btn btn-primary focusable action-toggle-verification-sock">
+            Learn About Verified Certificates
+        </button>
+        <div class="verification-main-panel">
+            <div class="verification-desc-panel content-main">
+                <h2>edX Verified Certificate</h2>
+                <h3>Why upgrade?</h3>
+                <ul>
+                    <li>Official proof of completion</li>
+                    <li>Easily shareable certificate</li>
+                    <li>Proven motivator to complete the course</li>
+                    <li>Certificate purchases help edX continue to offer free courses</li>
+                </ul>
+                <h3>How it works</h3>
+                <ul>
+                    <li>Pay the Verified Certificate upgrade fee</li>
+                    <li>Verify your identity with a webcam and government-issued ID</li>
+                    <li>Study hard and pass the course</li>
+                    <li>Share your certificate with friends, employers, and others</li>
+                </ul>
+                    <h3>edX Learner Stories</h3>
+                    <div class="learner-story-container">
+                        <img class="student-image" alt="Student Image" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/learner-quote.05d56e5ddbc1.png" />
+                        <div class="story-quote">
+                            My certificate has helped me showcase my knowledge on my                             resume - I feel like this certificate could really help me land                             my dream job!
+                            <span class="author">- Christina Fong, edX Learner</span>
+                        </div>
+                    </div>
+                    <div class="learner-story-container">
+                        <img class="student-image" alt="Student Image" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/learner-quote2.39200c5db560.png" />
+                        <div class="story-quote">
+                            I wanted to include a verified certificate on my resume and my profile to                             illustrate that I am working towards this goal I have and that I have                             achieved something while I was unemployed.<br/>
+                            <span class="author">- Cheryl Troell, edX Learner</span>
+                        </div>
+                    </div>
+                <img class="mini-cert" alt="Example Certificate Image" src="https://prod-edxapp.edx-cdn.org/static/course_experience/images/verified-cert.891c55cad756.png"/>
+                <a href="https://ecommerce.edx.org/basket/add/?sku=A26FFE1">
+                    <div class="btn btn-upgrade stuck-top focusable action-upgrade-certificate" data-creative="original_sock" data-position="sock">
+                        Upgrade ($99)
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/bundles/CourseSock.0202c1957d8234ef6792.881550144c98.js" ></script>
+      <script type="text/javascript">
+        
+    new CourseSock({
+        el:'.verification-sock'
+    });
+
+      </script>
+
+
+</div>
+<div class="container-footer">
+    <div class="course-license">
+      
+
+
+    © <span class="license-text">All Rights Reserved</span>
+
+    </div>
+</div>
+
+      
+    </div>
+
+        
+
+
+
+
+
+
+
+<footer id="footer-edx-v3" role="contentinfo" aria-label="Page Footer"
+>
+
+<div class="container">
+    <div class="row main-row"><!-- row -->
+        <div class="col-xl-2 col-lg-12 col-md-2 col-sm-8 col-xs-10 column-1 flex-column column-styles">
+            <div class="row">
+                <div class="col-12 column-2-2 column-styles">
+                <div class="edx-footer-logo">
+                    <a href="https://www.edx.org">
+                        <img alt="edX Home Page" src="https://prod-edxapp.edx-cdn.org/static/edx.org/images/logo-footer.fde85fe42f6b.png">
+                    </a>
+                </div>
+
+
+                </div>
+            </div>
+
+        </div>
+        <div class="col-xl-6 col-lg-8 col-md-9 col-sm-5 col-xs-12 column-2 flex-column column-styles">
+             <div class="row full-height">
+
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 column-2-1 col-xs-12 first-div-border column-styles ">
+                    <div class="row full-height">
+                        <div class="ml-xl-0 col-lg-10 ml-lg-auto col-md-12 column-2-2 col-sm-10 full-height column-styles">
+                              <h2 class="heading">edX</h2>
+                                  <ul class="list-unstyled clear-margins  ">
+                                      <li>
+                                          <a href="https://www.edx.org/about-us">About</a>
+                                      </li>
+                                      <li>
+                                          <a href="https://business.edx.org/?utm_campaign=edX.org+Referral&amp;utm_medium=Footer&amp;utm_source=edX.org">edX for Business</a>
+                                      </li>
+                                  </ul>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 second-div-border column-styles ">
+                        <div class="row full-height">
+                            <div class="col-lg-12 col-md-12 col-sm-10 column-2-2 full-height column-styles">
+                                  <h2 class="heading">Legal</h2>
+                                    <ul class="list-unstyled clear-margins  ">
+                                        <li>
+                                          <a href="https://www.edx.org/edx-terms-service">Terms of Service &amp; Honor Code</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/edx-privacy-policy">Privacy Policy</a>
+                                        </li>
+                                        <li>
+                                          <a href="https://www.edx.org/accessibility">Accessibility Policy</a>
+                                        </li>
+                                    </ul>
+                            </div>
+                          </div>
+                </div>
+                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12 column-2-1 third-div-border column-styles">
+                      <div class="row full-height">
+                        <div class="col-lg-12 col-md-12 col-sm-10 full-height column-2-2 column-styles">
+                              <h2 class="heading">Connect</h2>
+                              <ul class="list-unstyled clear-margins  ">
+                                <li>
+                                  <a href="https://www.edx.org/blog">Blog</a>
+                                </li>
+                                <li>
+                                  <a href="https://courses.edx.org/support/contact_us">Contact Us</a>
+                                </li>
+                                <li>
+                                  <a href="https://support.edx.org">Help Center</a>
+                                </li>
+                              </ul>
+                        </div>
+                      </div>
+                 </div>
+
+
+
+
+
+            </div>
+        </div>
+        <div class="col-xl-4 col-lg-4 col-md-9 ml-md-auto col-sm-7 column-3 flex-column fourth-div-border column-styles">
+                <div class="row">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 column-3-1 social-app-links-div column-styles ml-auto">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 column-3-2 column-styles">
+                             <ul class="list-inline list-unstyled social">
+                                    <li>
+                                        <a href="http://www.facebook.com/EdxOnline" class="social-links external" title="Facebook" rel="noreferrer">
+                                            <span class="icon fa fa-facebook-square" aria-hidden="true"></span>
+                                            <span class="sr">Like edX on Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://twitter.com/edXOnline" class="social-links external" title="Twitter" rel="noreferrer">
+                                            <span class="icon fa fa-twitter-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://www.youtube.com/user/edxonline" class="social-links external" title="Youtube" rel="noreferrer">
+                                            <span class="icon fa fa-youtube-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX YouTube channel</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.linkedin.com/company/edx" class="social-links external" title="LinkedIn" rel="noreferrer">
+                                            <span class="icon fa fa-linkedin-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on LinkedIn</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://plus.google.com/+edXOnline" class="social-links external" title="Google+" rel="noreferrer">
+                                            <span class="icon fa fa-google-plus-square" aria-hidden="true"></span>
+                                            <span class="sr">Follow edX on Google+</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.reddit.com/r/edx" class="social-links external" title="Reddit" rel="noreferrer">
+                                            <span class="icon fa fa-reddit-square" aria-hidden="true"></span>
+                                            <span class="sr">Subscribe to the edX subreddit</span>
+                                        </a>
+                                    </li>
+                             </ul>
+                            <ul class="list-inline list-unstyled app-links">
+                                    <li>
+                                        <a href="https://itunes.apple.com/us/app/edx/id945480667?mt=8" class="app-link external">
+                                            <img alt="Download the edX mobile app from the Apple App Store" src="https://prod-edxapp.edx-cdn.org/static/images/app/app_store_badge_135x40.d0558d910630.svg">
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="https://play.google.com/store/apps/details?id=org.edx.mobile" class="app-link external">
+                                            <img alt="Download the edX mobile app from Google Play" src="https://prod-edxapp.edx-cdn.org/static/images/app/google_play_badge_45.6ea466e328da.png">
+                                        </a>
+                                    </li>
+                            </ul>
+                              <!--"EdX, Open edX, and MicroMasters are trademarks of edX Inc. registered in the U.S. and other countries-->
+                              <p class="copyright">© 2012–2019 edX Inc. 
+                                  <br/>
+                                  edX, Open edX, and MicroMasters are registered trademarks of edX Inc. 
+                                     | 深圳市恒宇博科技有限公司
+                                    <a href="http://www.beian.miit.gov.cn">
+                                         粤ICP备17044299号-2
+                                    </a>
+                              </p>
+                        </div>
+                  </div>
+                </div>
+
+                </div>
+
+        </div>
+    </div>
+
+
+
+
+</div>
+
+</footer>
+
+
+
+  
+
+    <link href="https://prod-edxapp.edx-cdn.org/static/edx.org/css/lms-footer-edx.32498a91fc82.css" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+  </div>
+
+  
+  
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/common/js/vendor/jquery.scrollTo.525edcc52fe8.js"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/flot/jquery.flot.d3d45ff0c6a8.js"></script>
+
+  
+    <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/lms-courseware.515d666a83a0.js" charset="utf-8"></script>
+
+
+  
+
+
+
+
+<script type="text/javascript">
+    // Fast Preview was introduced in 2.5. However, it
+    // causes undesirable flashing/font size changes when
+    // MathJax is used for interactive preview (equation editor).
+    // Setting processSectionDelay to 0 (see below) fully eliminates
+    // fast preview, but to reduce confusion, we are also setting
+    // the option as displayed in the context menu to false.
+    // When upgrading to 2.6, check if this variable name changed.
+    window.MathJax = {
+      menuSettings: {CHTMLpreview: false}
+    };
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [
+        ["\\(","\\)"],
+        ['[mathjaxinline]','[/mathjaxinline]']
+      ],
+      displayMath: [
+        ["\\[","\\]"],
+        ['[mathjax]','[/mathjax]']
+      ]
+    }
+  });
+</script>
+<script type="text/x-mathjax-config">
+
+  // In order to eliminate all flashing during interactive
+  // preview, it is necessary to set processSectionDelay to 0
+  // (remove delay between input and output phases). This
+  // effectively disables fast preview, regardless of
+  // the fast preview setting as shown in the context menu.
+  MathJax.Hub.processSectionDelay = 0;
+
+  MathJax.Hub.signal.Interest(function(message) {
+    if(message[0] === "End Math") {
+        set_mathjax_display_div_settings();
+    }
+  });
+  function set_mathjax_display_div_settings() {
+    $('.MathJax_Display').each(function( index ) {
+      this.setAttribute('tabindex', '0');
+      this.setAttribute('aria-live', 'off');
+      this.removeAttribute('role');
+      this.removeAttribute('aria-readonly');
+    });
+  }
+</script>
+
+<script type="text/javascript">
+    // Activating Mathjax accessibility files
+    window.MathJax = {
+        menuSettings: {
+            collapsible: true,
+            autocollapse: false,
+            explorer: true
+        }
+    };
+</script>
+
+<!-- This must appear after all mathjax-config blocks, so it is after the imports from the other templates.
+     It can't be run through static.url because MathJax uses crazy url introspection to do lazy loading of
+     MathJax extension libraries -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.5/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+
+
+
+  
+    
+      <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/courseware/courseware_factory.1504fc10caef.js?raw"></script>
+    <script type="text/javascript">
+        (function (require) {
+            require(['js/courseware/courseware_factory'], function (CoursewareFactory) {
+                
+    CoursewareFactory();
+  
+            });
+        }).call(this, require || RequireJS.require);
+    </script>
+
+
+
+  <script type="text/javascript">
+    var $$course_id = "course\u002Dv1:Microsoft+DEV277x+1T2019a";
+  </script>
+
+
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/XModuleShim.0e349eed81367fb7ccdd.dd1461bd28b9.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/HtmlModule.47b010de459c5283c553.0a20005cf2ce.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/VerticalStudentView.23b904bc947505e70112.0021c734d8a7.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/VideoModule.c266ced092aed3065dc7.519e4628260a.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/js/discussion.98f04bc16f32.js' type='application/javascript'></script>
+<script src='https://prod-edxapp.edx-cdn.org/static/bundles/SequenceModule.d242866f1d8167a6f9dc.fb9ef582964d.js' type='application/javascript'></script>
+
+
+
+  
+
+
+    <!-- begin segment footer -->
+    <script type="text/javascript">
+        $(window).load(function() {
+            analytics.identify(
+                "11725401",
+                {
+                    email: "enguerran.dallet@gmail.com",
+                    username: "enguerran_dallet"
+                },
+                {
+                    integrations: {
+                        // Disable MailChimp because we don't want to update the user's email
+                        // and username in MailChimp on every page load. We only need to capture
+                        // this data on registration/activation.
+                        MailChimp: false
+                    }
+                }
+            );
+        });
+    </script>
+    <!-- end segment footer -->
+
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/vendor/noreferrer.aa62a3e70ffa.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/utils/navigation.08930e16ab3d.js" charset="utf-8"></script>
+  <script type="text/javascript" src="https://prod-edxapp.edx-cdn.org/static/js/header/header.309a1243e175.js"></script>
+  
+</body>
+</html>
+
+
